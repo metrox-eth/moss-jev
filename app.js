@@ -1,11 +1,11 @@
-const recordings=await fetch('./replay.json').then(r=>r.json());
+let recordings=[];try{const rr=await fetch('./replay.json',{cache:'no-store'});if(!rr.ok)throw new Error('replay.json HTTP '+rr.status);recordings=await rr.json();}catch(e){const b=document.getElementById('start');if(b){b.textContent='LOAD ERROR: '+e.message;}console.error(e);}
 async function replay(state){
  const ids=state.objects.map(o=>o.id).sort().join(',');
  const row=recordings.find(r=>r.state.objects.map(o=>o.id).sort().join(',')===ids);
  if(!row)throw new Error('No recorded decision for this scene. Reset to replay.');
  return {ok:true,json:async()=>({...row,calls:recordings.indexOf(row)+1,total_cost:0})};
 }
-import * as T from 'three';
+import * as T from './assets/three.module.js';
 import {GLTFLoader} from './assets/GLTFLoader.js';
 const $=id=>document.getElementById(id),scene=new T.Scene();
 scene.fog=new T.FogExp2(0x0c1520,.16);
@@ -62,6 +62,6 @@ pickupTime+=dt;let f=Math.min(149,Math.floor(pickupTime*22));setArm(motion.frame
 }
 function tick(now){requestAnimationFrame(tick);const dt=Math.min(.05,(now-last)/1000);last=now;elapsed+=dt;if(model&&motion)step(dt);tracks(phase,turnPhase);if(selected&&!selected.collected){const s=1+.1*Math.sin(elapsed*5);selected.ring.scale.setScalar(s);targetBeacon.material.opacity=.04+.03*(1+Math.sin(elapsed*4))/2;}const rect=$('viewport').getBoundingClientRect();objects.forEach(o=>{if(o.collected)return;const p=new T.Vector3(o.x,o.y,.12).project(camera);o.el.style.left=((p.x+1)*rect.width/2)+'px';o.el.style.top=((1-p.y)*rect.height/2)+'px';});renderer.render(scene,camera);}
 const resize=()=>{const r=$('viewport').getBoundingClientRect();renderer.setSize(r.width,r.height);camera.aspect=r.width/r.height;camera.updateProjectionMatrix();};new ResizeObserver(resize).observe($('viewport'));resize();requestAnimationFrame(tick);
-try{const [g,m,health]=await Promise.all([new GLTFLoader().loadAsync('./assets/moss.glb'),fetch('./assets/motion.json').then(r=>r.json()),Promise.resolve({ready:true})]);model=g.scene;robot.add(model);motion=m;model.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}if(o.name.startsWith('arm_'))armNodes[o.name.slice(4)]=o;});setArm(motion.travel);$('connection').textContent=health.ready?'RECORDED RUN':'API KEY REQUIRED';$('start').disabled=!health.ready;buttons();log('MOSS loaded. Recorded replay ready.');}catch(e){status('LOAD ERROR',e.message);$('connection').textContent='NOT READY';$('start').textContent='LOAD FAILED';console.error(e);}
+try{const [g,m,health]=await Promise.all([new Promise((res,rej)=>new GLTFLoader().load('./assets/moss.glb',res,ev=>{if(ev.total){$('start').textContent='LOADING MOSS… '+Math.round(100*ev.loaded/ev.total)+'%';}},rej)),fetch('./assets/motion.json').then(r=>r.json()),Promise.resolve({ready:true})]);model=g.scene;robot.add(model);motion=m;model.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}if(o.name.startsWith('arm_'))armNodes[o.name.slice(4)]=o;});setArm(motion.travel);$('connection').textContent=health.ready?'RECORDED RUN':'API KEY REQUIRED';$('start').disabled=!health.ready;buttons();log('MOSS loaded. Recorded replay ready.');}catch(e){status('LOAD ERROR',e.message);$('connection').textContent='NOT READY';$('start').textContent='LOAD FAILED';console.error(e);}
 
 document.querySelectorAll('[data-mission]').forEach(b=>{if(b.dataset.mission!=='cans'){b.disabled=true;b.title='Other missions are available in the protected live demo';}});
