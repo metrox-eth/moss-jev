@@ -1,15 +1,25 @@
-const recordings=await fetch('./replay.json').then(r=>r.json());
+let recordings;
+try { const r=await fetch('./replay.json?v=2'); if(!r.ok)throw new Error('HTTP '+r.status); recordings=await r.json(); }
+catch(e){document.getElementById('connection').textContent='LOAD ERROR';document.getElementById('start').textContent='Reload to retry';throw e;}
+let replayIndex=0;
 async function replay(state){
- const ids=state.objects.map(o=>o.id).sort().join(',');
- const row=recordings.find(r=>r.state.objects.map(o=>o.id).sort().join(',')===ids);
- if(!row)throw new Error('No recorded decision for this scene. Reset to replay.');
- return {ok:true,json:async()=>({...row,calls:recordings.indexOf(row)+1,total_cost:0})};
+ const rows=recordings[mission],row=rows?.[replayIndex];
+ const ids=s=>s.objects.map(o=>o.id).sort().join(',');
+ if(!row||row.state.instruction!==state.instruction||ids(row.state)!==ids(state))throw new Error('Replay state mismatch. Reset this scenario.');
+ replayIndex++;
+ return {ok:true,json:async()=>({...row,calls:replayIndex,total_cost:0})};
 }
-import * as T from 'three';
+import * as T from './assets/three.module.js';
 import {GLTFLoader} from './assets/GLTFLoader.js';
 const $=id=>document.getElementById(id),scene=new T.Scene();
 scene.fog=new T.FogExp2(0x0c1520,.16);
-const renderer=new T.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.35;$('viewport').appendChild(renderer.domElement);
+let renderer;
+try{renderer=new T.WebGLRenderer({antialias:true,alpha:true});}catch(e){
+ $('connection').textContent='3D UNAVAILABLE';$('phase').textContent='WEBGL UNAVAILABLE';
+ $('action').textContent='Enable graphics acceleration in your browser settings, then restart the browser.';
+ $('start').textContent='3D unavailable';throw e;
+}
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.35;$('viewport').appendChild(renderer.domElement);
 const camera=new T.PerspectiveCamera(38,1,.01,30);camera.up.set(0,0,1);camera.position.set(1.75,-2.6,2.8);camera.lookAt(.0,.1,.05);
 scene.add(new T.HemisphereLight(0xcbeaf4,0x263748,2.1));
 const key=new T.DirectionalLight(0xffe2cf,3.2);key.position.set(-1,-2,4);key.castShadow=true;key.shadow.mapSize.set(2048,2048);key.shadow.camera.left=-2;key.shadow.camera.right=2;key.shadow.camera.top=2;key.shadow.camera.bottom=-2;key.shadow.bias=-.0004;scene.add(key);
@@ -32,7 +42,14 @@ let routeLine=null;const targetBeacon=mesh(new T.CylinderGeometry(.07,.07,.25,32
 const missions={cans:{title:'PICK UP<br><em>THE CANS.</em>',instruction:'Collect only cans. Leave bottles, paper and cups untouched. Return home once all reachable cans have been collected.'},bottles:{title:'NOW PICK<br><em>THE BOTTLES.</em>',instruction:'Collect only bottles. Leave cans, paper and cups untouched. Return home once all reachable bottles have been collected.'},all:{title:'LEAVE IT<br><em>CLEANER.</em>',instruction:'Collect all reachable litter, preferring the nearest object. Return home when finished.'},home:{title:'TIME TO<br><em>COME HOME.</em>',instruction:'Return home immediately without collecting any more litter.'}};
 let mission='cans',running=false,busy=false,revision=0,mode='idle',selected=null,route=[],pickupTime=0,holdTime=0,phase=0,turnPhase=0,collected=0,model=null,motion=null,armNodes={},apiCount=0,pendingDecision=false;
 const histories=[];function log(s){histories.unshift(s);$('history').replaceChildren(...histories.slice(0,4).map(t=>{const li=document.createElement('li');li.textContent=t;return li;}));}function status(a,b){$('phase').textContent=a;$('action').textContent=b;}function toast(s){$('toast').textContent=s;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1800);}
-function setMission(k){mission=k;revision++;$('mission').innerHTML=missions[k].title;document.querySelectorAll('[data-mission]').forEach(b=>b.classList.toggle('active',b.dataset.mission===k));log('Mission: '+k.toUpperCase());if(running&&mode!=='pick'){mode='idle';route=[];clearTarget();}if(mode==='pick')pendingDecision=true;}
+function setMission(k){
+ if(!model||!motion)return;
+ mission=k;$('reset').onclick();
+ $('mission').innerHTML=missions[k].title;
+ document.querySelectorAll('[data-mission]').forEach(b=>b.classList.toggle('active',b.dataset.mission===k));
+ if(k==='home'){robot.position.set(.7,-.6,0);robot.rotation.z=Math.PI;}
+ log('Recorded scenario: '+k.toUpperCase());toast('NEW SCENARIO');running=true;buttons();
+}
 document.querySelectorAll('[data-mission]').forEach(b=>b.onclick=()=>setMission(b.dataset.mission));
 function setArm(matrices){for(const [k,m] of Object.entries(matrices)){const node=armNodes[k];if(node){node.matrix.fromArray(m.flat()).transpose();node.matrixAutoUpdate=false;}}}
 function clearTarget(){selected=null;targetBeacon.visible=false;objects.forEach(o=>{o.el.classList.remove('target');o.ring.material.color.setHex(0x567989);});if(routeLine){scene.remove(routeLine);routeLine.geometry.dispose();routeLine=null;}}
@@ -42,19 +59,19 @@ while(open.length&&steps++<4000){open.sort((a,b)=>(cost.get(key(...a))+Math.hypo
 for(const [dx,dy] of [[1,0],[-1,0],[0,1],[0,-1],[1,1],[-1,1],[1,-1],[-1,-1]]){const a=c[0]+dx,b=c[1]+dy,n=key(a,b);if(obstacle(a*h,b*h)||obstacle((c[0]+dx*.5)*h,(c[1]+dy*.5)*h))continue;const g=cost.get(ck)+Math.hypot(dx,dy);if(g<(cost.get(n)??Infinity)){cost.set(n,g);prev.set(n,ck);open.push([a,b]);}}}return null;}
 function approach(o){let best=null;for(let i=0;i<12;i++){let a=i*Math.PI/6;let x=o.x-.315*Math.cos(a),y=o.y-.315*Math.sin(a);let p=pathTo(x,y);if(!p)continue;let len=0,prev=robot.position;for(const w of p){len+=Math.hypot(w.x-prev.x,w.y-prev.y);prev=w;}if(!best||len<best.len)best={path:p,len,angle:a};}return best;}
 function drawRoute(p){if(routeLine){scene.remove(routeLine);routeLine.geometry.dispose();}routeLine=new T.Line(new T.BufferGeometry().setFromPoints([new T.Vector3(robot.position.x,robot.position.y,.014),...p.map(v=>new T.Vector3(v.x,v.y,.014))]),new T.LineDashedMaterial({color:0x6cf8c7,dashSize:.035,gapSize:.018}));routeLine.computeLineDistances();scene.add(routeLine);}
-async function decide(){if(busy||!running)return;busy=true;const rev=revision;status('RECORDED JEV DECISION','Replaying a real API response from the recorded run.');$('decision').textContent='Thinking…';const options=objects.filter(o=>!o.collected).map(o=>({id:o.id,kind:o.kind,reachable:!!approach(o),distance_m:+Math.hypot(o.x-robot.position.x,o.y-robot.position.y).toFixed(2)}));const state={instruction:missions[mission].instruction,robot:'MOSS tracked litter-collection rover in simulation',battery_percent:86,bin_full:collected>=6,already_home:Math.hypot(robot.position.x-home.x,robot.position.y-home.y)<.06,objects:options};
+async function decide(){if(busy||!running)return;busy=true;const rev=revision;status('RECORDED JEV DECISION','Replaying a real API response from the recorded run.');$('decision').textContent='Replaying…';const options=objects.filter(o=>!o.collected).map(o=>({id:o.id,kind:o.kind,reachable:!!approach(o),distance_m:+Math.hypot(o.x-robot.position.x,o.y-robot.position.y).toFixed(2)}));const state={instruction:missions[mission].instruction,robot:'MOSS tracked litter-collection rover in simulation',battery_percent:86,bin_full:collected>=6,already_home:Math.hypot(robot.position.x-home.x,robot.position.y-home.y)<.06,objects:options};
 try{const r=await replay(state);const d=await r.json();if(!r.ok)throw new Error(d.error||'Request failed');apiCount++;$('latency').innerHTML=d.latency_ms.toLocaleString()+'<span> ms</span>';$('calls').textContent=d.calls+' recorded decisions';$('cost').textContent='$'+d.total_cost.toFixed(6);if(rev!==revision||!running)return;
 const answer=d.answer;const labels={home:'HOME STATION',wait:'WAIT',...Object.fromEntries(objects.map(o=>[o.id,o.label]))};$('decision').textContent=labels[answer.choice]||answer.choice;
 $('probabilities').replaceChildren(...Object.entries(answer.probabilities||{}).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([id,p])=>{const div=document.createElement('div');div.className='prob'+(id===answer.choice?' winner':'');const line=document.createElement('div');line.className='prob-label';const name=document.createElement('span');name.textContent=labels[id]||id;const value=document.createElement('b');value.textContent=(p*100).toFixed(1)+'%';line.append(name,value);const bar=document.createElement('div');bar.className='bar';const fill=document.createElement('div');fill.style.width=(100*p)+'%';bar.append(fill);div.append(line,bar);return div;}));
 log('Jev → '+labels[answer.choice]+' · '+d.latency_ms+' ms');clearTarget();
 if(answer.choice==='wait'){running=false;status('WAITING','Jev chose to wait.');buttons();return;}
-if(answer.choice==='home'){route=pathTo(home.x,home.y)||[];if(Math.hypot(robot.position.x-home.x,robot.position.y-home.y)<.07){finish();return;}mode='home';drawRoute(route);status('RETURNING HOME','Mission complete. Heading back.');return;}
+if(answer.choice==='home'){route=pathTo(home.x,home.y);if(!route)throw new Error('No route home.');if(Math.hypot(robot.position.x-home.x,robot.position.y-home.y)<.07){finish();return;}mode='home';drawRoute(route);status('RETURNING HOME','Mission complete. Heading back.');return;}
 selected=objects.find(o=>o.id===answer.choice&&!o.collected);const plan=selected&&approach(selected);if(!plan)throw new Error('No collision-free route to selected object. Robot stopped.');route=plan.path;selected.angle=plan.angle;selected.el.classList.add('target');selected.ring.material.color.setHex(0x6cf8c7);targetBeacon.position.set(selected.x,selected.y,.13);targetBeacon.visible=true;drawRoute(route);mode='highlight';holdTime=1.3;status('TARGET LOCKED',selected.label+' selected. Moving to collect.');toast(selected.label+' SELECTED');
 }catch(e){running=false;mode='idle';status('API / PLANNING ERROR',e.message);$('decision').textContent='Paused — no fallback';log(e.message);buttons();}finally{busy=false;}}
 function buttons(){$('start').hidden=running;$('pause').hidden=!running;$('start').textContent=collected?'CONTINUE →':'LET’S CLEAN →';}
-function finish(){running=false;mode='idle';clearTarget();status('BACK AT BASE',collected+' pieces collected. A little cleaner.');toast('MISSION COMPLETE');log('MOSS returned home.');buttons();}
-$('start').onclick=()=>{running=true;buttons();};$('pause').onclick=()=>{running=false;status('PAUSED','Ready when you are.');buttons();};
-$('reset').onclick=()=>{revision++;running=false;mode='idle';clearTarget();collected=0;robot.position.set(home.x,home.y,0);robot.rotation.z=.6;objects.forEach(o=>{scene.add(o.group);o.group.position.set(o.x,o.y,0);o.group.rotation.set(0,0,0);o.collected=false;o.el.className='label';o.ring.visible=true;});if(motion)setArm(motion.travel);$('collected').textContent='0';$('decision').innerHTML='Waiting for<br>your mission.';$('probabilities').innerHTML='<div class="placeholder">New scene. Real decisions.</div>';histories.length=0;log('Scene reset.');buttons();status('READY TO ROLL','Your call. Its next move.');};
+function finish(){running=false;mode='idle';clearTarget();status('BACK AT BASE',collected?collected+' pieces collected. A little cleaner.':'Returned to base without collecting litter.');toast('MISSION COMPLETE');log('MOSS returned home.');buttons();}
+$('start').onclick=()=>{if(replayIndex>=recordings[mission].length)$('reset').onclick();running=true;buttons();};$('pause').onclick=()=>{running=false;status('PAUSED','Ready when you are.');buttons();};
+$('reset').onclick=()=>{revision++;replayIndex=0;running=false;mode='idle';clearTarget();collected=0;robot.position.set(home.x,home.y,0);robot.rotation.z=.6;if(mission==='home'){robot.position.set(.7,-.6,0);robot.rotation.z=Math.PI;}objects.forEach(o=>{scene.add(o.group);o.group.position.set(o.x,o.y,0);o.group.rotation.set(0,0,0);o.collected=false;o.el.className='label';o.ring.visible=true;});if(motion)setArm(motion.travel);$('calls').textContent='0 recorded decisions';$('latency').textContent='—';$('toast').classList.remove('show');$('collected').textContent='0';$('decision').innerHTML='Waiting for<br>your mission.';$('probabilities').innerHTML='<div class="placeholder">New scene. Real decisions.</div>';histories.length=0;log('Scene reset.');buttons();status('READY TO ROLL','Your call. Its next move.');};
 let last=performance.now(),elapsed=0;function rotateToward(a,dt){let e=Math.atan2(Math.sin(a-robot.rotation.z),Math.cos(a-robot.rotation.z));let w=T.MathUtils.clamp(e,-dt*1.9,dt*1.9);robot.rotation.z+=w;turnPhase+=w*.04;return Math.abs(e);}
 function nav(dt){if(!route.length){if(mode==='home'){finish();return;}mode='align';return;}const p=route[0],dx=p.x-robot.position.x,dy=p.y-robot.position.y,d=Math.hypot(dx,dy);if(d<.027){route.shift();return;}let err=rotateToward(Math.atan2(dy,dx),dt);if(err<.17){const step=Math.min(d,.26*dt);robot.position.x+=Math.cos(robot.rotation.z)*step;robot.position.y+=Math.sin(robot.rotation.z)*step;phase+=step*1.7;}}
 function step(dt){if(!running)return;if(mode==='idle'&&!busy){decide();return;}if(mode==='highlight'){holdTime-=dt;if(holdTime<=0)mode='navigate';}else if(mode==='navigate'||mode==='home')nav(dt);else if(mode==='align'){if(rotateToward(selected.angle,dt)<.015){mode='pick';pickupTime=0;status('PICK. LIFT. DROP.','Collecting '+selected.label+'.');}}else if(mode==='pick'){
@@ -62,6 +79,4 @@ pickupTime+=dt;let f=Math.min(149,Math.floor(pickupTime*22));setArm(motion.frame
 }
 function tick(now){requestAnimationFrame(tick);const dt=Math.min(.05,(now-last)/1000);last=now;elapsed+=dt;if(model&&motion)step(dt);tracks(phase,turnPhase);if(selected&&!selected.collected){const s=1+.1*Math.sin(elapsed*5);selected.ring.scale.setScalar(s);targetBeacon.material.opacity=.04+.03*(1+Math.sin(elapsed*4))/2;}const rect=$('viewport').getBoundingClientRect();objects.forEach(o=>{if(o.collected)return;const p=new T.Vector3(o.x,o.y,.12).project(camera);o.el.style.left=((p.x+1)*rect.width/2)+'px';o.el.style.top=((1-p.y)*rect.height/2)+'px';});renderer.render(scene,camera);}
 const resize=()=>{const r=$('viewport').getBoundingClientRect();renderer.setSize(r.width,r.height);camera.aspect=r.width/r.height;camera.updateProjectionMatrix();};new ResizeObserver(resize).observe($('viewport'));resize();requestAnimationFrame(tick);
-try{const [g,m,health]=await Promise.all([new GLTFLoader().loadAsync('./assets/moss.glb'),fetch('./assets/motion.json').then(r=>r.json()),Promise.resolve({ready:true})]);model=g.scene;robot.add(model);motion=m;model.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}if(o.name.startsWith('arm_'))armNodes[o.name.slice(4)]=o;});setArm(motion.travel);$('connection').textContent=health.ready?'RECORDED RUN':'API KEY REQUIRED';$('start').disabled=!health.ready;buttons();log('MOSS loaded. Recorded replay ready.');}catch(e){status('LOAD ERROR',e.message);$('connection').textContent='NOT READY';$('start').textContent='LOAD FAILED';console.error(e);}
-
-document.querySelectorAll('[data-mission]').forEach(b=>{if(b.dataset.mission!=='cans'){b.disabled=true;b.title='Other missions are available in the protected live demo';}});
+try{const [g,m,health]=await Promise.all([new GLTFLoader().loadAsync('./assets/moss.glb?v=2'),fetch('./assets/motion.json?v=2').then(r=>r.json()),Promise.resolve({ready:true})]);model=g.scene;robot.add(model);motion=m;model.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}if(o.name.startsWith('arm_'))armNodes[o.name.slice(4)]=o;});setArm(motion.travel);$('connection').textContent=health.ready?'RECORDED RUN':'API KEY REQUIRED';$('start').disabled=!health.ready;document.querySelectorAll('[data-mission]').forEach(b=>b.disabled=false);buttons();log('MOSS loaded. Recorded replay ready.');}catch(e){status('LOAD ERROR',e.message);$('connection').textContent='NOT READY';$('start').textContent='LOAD FAILED';console.error(e);}
