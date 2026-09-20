@@ -4,3 +4,5 @@ Parallel gripper: norma-core/norma-core hardware/pgripper, Apache-2.0.
 Derived presentation assets converted to GLB, recolored and animated for this demo; gripper adapted for MOSS.
 Three.js r170: Three.js authors, MIT; loader import path adjusted.
 This visual demo does not distribute manufacturing STL or CAD files.
+
+Space Grotesk: Florian Karsten, SIL Open Font License 1.1; see SpaceGrotesk-OFL.txt.
