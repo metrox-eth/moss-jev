@@ -70,6 +70,13 @@ Known discrepancy: the CAD belts sit 266 mm apart, the legacy collision boxes
 244 mm. The overlay does not change the drive model; see
 [`model/visuals_v04/README.md`](model/visuals_v04/README.md).
 
+**Collision diagnostics (optional).** `model/collision_diagnostics/` holds runnable checks for the
+contact model: an audit that reproduces a common mesh-frame mistake (the bin rim is at 260 mm,
+not 296 mm, once mesh rotation is applied), a candidate with per-part convex hulls for the arm and
+V0.4 belt hulls (266 mm spacing), and a self-contact diagnostic. Preservation checks pass on macOS
+and Linux; nothing in it is validated on hardware. See
+[`model/collision_diagnostics/INTEGRATION.md`](model/collision_diagnostics/INTEGRATION.md).
+
 The robot-only file contains a home keyframe and eight actuators. Its base is
 constrained to a single X slide; importing it does not create a differential
 drive controller. See [INTEGRATION.md](INTEGRATION.md) for the joint contract,

@@ -1,0 +1,359 @@
+{
+  "mujoco_version": "3.13.0",
+  "units": "metres unless explicitly labelled",
+  "scope": "Local original robot export and V0.4 visual package; not the modified lab model.",
+  "bin": {
+    "raw_stl": {
+      "min": [
+        -0.17899999022483826,
+        -0.11600000411272049,
+        0.10899820178747177
+      ],
+      "max": [
+        0.004999999888241291,
+        0.11600000411272049,
+        0.260000079870224
+      ]
+    },
+    "correct_compiled": {
+      "min": [
+        -0.17899998998506061,
+        -0.11600000462660005,
+        0.10899820148600049
+      ],
+      "max": [
+        0.005000000484356587,
+        0.1160000054405996,
+        0.2600000771475891
+      ]
+    },
+    "omitted_geom_rotation": {
+      "min": [
+        -0.15774421412975326,
+        -0.09202337478947901,
+        0.06372946374221797
+      ],
+      "max": [
+        -0.006674893391437675,
+        0.0919799112741921,
+        0.2957297178368187
+      ]
+    },
+    "compiled_vertex_count": 3276,
+    "raw_and_compiled_bounds_agree_1um": true,
+    "translated_rotated_body_bounds_agree_1um": true
+  },
+  "legacy_collision_boxes_at_zero_pose": {
+    "bin_floor": {
+      "min": [
+        -0.16399999999999998,
+        -0.096,
+        0.1082
+      ],
+      "max": [
+        -0.009999999999999995,
+        0.096,
+        0.11220000000000001
+      ]
+    },
+    "bin_x-1": {
+      "min": [
+        -0.17817513250853234,
+        -0.11,
+        0.11105777682492539
+      ],
+      "max": [
+        -0.15782486749146768,
+        0.11,
+        0.2609422231750746
+      ]
+    },
+    "bin_x1": {
+      "min": [
+        -0.016175132508532326,
+        -0.11,
+        0.11105777682492539
+      ],
+      "max": [
+        0.004175132508532325,
+        0.11,
+        0.2609422231750746
+      ]
+    },
+    "bin_y-1": {
+      "min": [
+        -0.177,
+        -0.1098775834708154,
+        0.11104156536961526
+      ],
+      "max": [
+        0.0030000000000000027,
+        -0.09012241652918461,
+        0.2609584346303847
+      ]
+    },
+    "bin_y1": {
+      "min": [
+        -0.177,
+        0.09012241652918461,
+        0.11104156536961526
+      ],
+      "max": [
+        0.0030000000000000027,
+        0.1098775834708154,
+        0.2609584346303847
+      ]
+    },
+    "hull": {
+      "min": [
+        -0.14500000000000002,
+        -0.093,
+        0.03
+      ],
+      "max": [
+        0.115,
+        0.093,
+        0.1
+      ]
+    },
+    "track_-1": {
+      "min": [
+        -0.14,
+        -0.141,
+        0.0040000000000000036
+      ],
+      "max": [
+        0.14,
+        -0.103,
+        0.094
+      ]
+    },
+    "track_1": {
+      "min": [
+        -0.14,
+        0.103,
+        0.0040000000000000036
+      ],
+      "max": [
+        0.14,
+        0.141,
+        0.094
+      ]
+    }
+  },
+  "arm": {
+    "upper_arm_link": {
+      "visual_bounds_link_frame": {
+        "min": [
+          -0.13016999023540576,
+          -0.038200043567202524,
+          -0.02001695606182602
+        ],
+        "max": [
+          0.011999989775482287,
+          0.012000075604587298,
+          0.05379994731485768
+        ]
+      },
+      "proxy_segment_link_frame": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.11257,
+          -0.028,
+          1.73763e-16
+        ]
+      ],
+      "proxy_radius": 0.013,
+      "max_vertex_distance_from_segment": 0.05897836109303368,
+      "max_vertex_outside_original_capsule": 0.04597836109303368,
+      "max_vertex_outside_radius_35mm_capsule": 0.023978361093033675,
+      "note": "Vertex coverage of the exported visuals; not a collision/path validation."
+    },
+    "lower_arm_link": {
+      "visual_bounds_link_frame": {
+        "min": [
+          -0.14510002781208395,
+          -0.015000060932132289,
+          -0.01655749460307755
+        ],
+        "max": [
+          0.012009561182232516,
+          0.021900851027121453,
+          0.05239962155511645
+        ]
+      },
+      "proxy_segment_link_frame": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.1349,
+          0.0052,
+          3.62355e-17
+        ]
+      ],
+      "proxy_radius": 0.013,
+      "max_vertex_distance_from_segment": 0.05264561525810751,
+      "max_vertex_outside_original_capsule": 0.03964561525810751,
+      "max_vertex_outside_radius_35mm_capsule": 0.017645615258107504,
+      "note": "Vertex coverage of the exported visuals; not a collision/path validation."
+    },
+    "wrist_link": {
+      "visual_bounds_link_frame": {
+        "min": [
+          -0.019999948561006883,
+          -0.065828345958462,
+          -0.01753741166534235
+        ],
+        "max": [
+          0.015665282730759147,
+          0.01199686577166018,
+          0.05330004987294759
+        ]
+      },
+      "proxy_segment_link_frame": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          5.55112e-17,
+          -0.0611,
+          0.0181
+        ]
+      ],
+      "proxy_radius": 0.013,
+      "max_vertex_distance_from_segment": 0.04624345679922259,
+      "max_vertex_outside_original_capsule": 0.033243456799222595,
+      "max_vertex_outside_radius_35mm_capsule": 0.01124345679922259,
+      "note": "Vertex coverage of the exported visuals; not a collision/path validation."
+    },
+    "shoulder_link": {
+      "visual_bounds_link_frame": {
+        "min": [
+          -0.050599162040267175,
+          -0.03491613331209018,
+          -0.06440002557128073
+        ],
+        "max": [
+          0.012200796955784847,
+          0.028702963704761917,
+          0.046202334175834255
+        ]
+      },
+      "proxy_segment_link_frame": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.0303992,
+          -0.0182778,
+          -0.0542
+        ]
+      ],
+      "proxy_radius": 0.013,
+      "max_vertex_distance_from_segment": 0.06127683517942834,
+      "max_vertex_outside_original_capsule": 0.048276835179428344,
+      "max_vertex_outside_radius_35mm_capsule": 0.02627683517942834,
+      "note": "Vertex coverage of the exported visuals; not a collision/path validation."
+    }
+  },
+  "arm_collision_masks": {
+    "explicit_pair_count_in_original": 0,
+    "capsules": {
+      "upper_arm_link_proxy": [
+        2,
+        1
+      ],
+      "lower_arm_link_proxy": [
+        2,
+        1
+      ],
+      "wrist_link_proxy": [
+        2,
+        1
+      ],
+      "shoulder_link_proxy": [
+        2,
+        1
+      ]
+    },
+    "any_capsule_pair_passes_mask_test": false,
+    "note": "These original masks exclude automatic capsule/capsule contacts. Downstream masks unknown."
+  },
+  "v04_visual_bounds_rover_frame": {
+    "v04_belt_left": {
+      "min": [
+        -0.16459785401821136,
+        0.11699981987476349,
+        -3.1407511845601526e-17
+      ],
+      "max": [
+        0.16459785401821136,
+        0.14900000393390656,
+        0.0792279988527298
+      ]
+    },
+    "v04_belt_right": {
+      "min": [
+        -0.16459785401821136,
+        -0.14900018274784088,
+        -3.178320404493331e-17
+      ],
+      "max": [
+        0.16459785401821136,
+        -0.11699999868869781,
+        0.0792279988527298
+      ]
+    },
+    "v04_hull": {
+      "min": [
+        -0.17100001871585846,
+        -0.1185000017285347,
+        0.02149999886751175
+      ],
+      "max": [
+        0.1600000113248825,
+        0.1185000017285347,
+        0.10100442171096802
+      ]
+    }
+  },
+  "track_centre_spacing": {
+    "visual_geometry": 0.26600000262260437,
+    "legacy_proxies": 0.244,
+    "note": "Geometric spacing only; effective skid-steer width needs physical calibration."
+  },
+  "provenance_sha256": {
+    "lower_arm_link_0.stl": "59f4215e03c430515904fab9cc857f144ef2bd74341bee012f4e1ec62821159d",
+    "lower_arm_link_1.stl": "2cbb01be1ffef0949b0c2dbbd7d462f7010aac78cf0ee5313a4e6a9b582ef7c0",
+    "lower_arm_link_2.stl": "4c314076cf647589d6f919f871e847507893d0168f7b5ebdc80208248009c128",
+    "shoulder_link_0.stl": "06aba91a426e25f004050bfe79658ff8ef15415c7678083b9be53f42c982231b",
+    "shoulder_link_1.stl": "474a087ea8149c3e373b3ad8f583887470eee522ef65a8b9bea5871d856831dc",
+    "shoulder_link_2.stl": "65c29cb880f59b6e042888bdc1990b078ee9aa35b30be2d94a65251d3e5c1d70",
+    "upper_arm_link_0.stl": "3b92835d809d775703c66a4e23c3107074d3ae1c75fa875e6ae2119e108b2ecf",
+    "upper_arm_link_1.stl": "33f263290418bfef20b9d32eeaa0e2eacc74e1e0dbc7dd8b58bb636674223c99",
+    "wrist_link_0.stl": "4d143a7fff523877d21de7ad9d85ef9e10210f35c5444870083b967aa41ebb83",
+    "wrist_link_1.stl": "e37ee4ef0718a21229b176780f828d79df24d568e0a9a7799cff6add0d133104",
+    "moss_robot.xml": "da29c056fd34295a300a67ff327c6292b891cea36ee4c1b137e64b78da5ee52c",
+    "v04_030_bin.stl": "01ed2618f9c0c847f1dbc5d28cfa3d99d83387d799ffb9bc6dff047afcbe3ad5",
+    "v04_belt_left.stl": "2a4baa8738fe2fcd5a18af8b24baeea8269c60c6bd26a320038937977dc594c0",
+    "v04_belt_right.stl": "253b37204f23a6189ed880b3cbc88d1d17dbd0f857e5b7e9284a154af15027c5",
+    "v04_hull.stl": "afc2cd5ab21c6ed8b0ff967e294ee5fa6e57f1fd9a4f14341dd10741ceac12cf"
+  },
+  "not_verified": [
+    "Downstream 40k-pose sample and jam/settling results",
+    "Candidate tuck path and real hardware clearances",
+    "ONNX ordered 32-slot observation and 8-slot action contract",
+    "Camera specifications and measured perception timing"
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "source_sha256": "9f9efa0087802abfd9152983324165f6c02153e9c3820de0be1b0419bd3a181a",
+  "candidate_sha256": "9a93886d956544b761dd0fca0e3018e212435ea28df15829462d4d03ae96821b",
+  "mujoco_version": "3.13.0",
+  "self_contacts": true,
+  "changes": [
+    {
+      "geom": "bin_x-1",
+      "before": {
+        "name": "bin_x-1",
+        "type": "box",
+        "pos": "-0.168 0 0.186",
+        "size": "0.003 0.11 0.075",
+        "rgba": "0.2 0.3 0.4 0",
+        "euler": "0 -0.096 0",
+        "group": "3"
+      },
+      "after": {
+        "name": "bin_x-1",
+        "type": "box",
+        "size": ".003 .11 .075",
+        "rgba": "0.2 0.3 0.4 0",
+        "group": "3",
+        "pos": "-.168 0 .186",
+        "euler": "0 -.096 0"
+      }
+    },
+    {
+      "geom": "bin_x1",
+      "before": {
+        "name": "bin_x1",
+        "type": "box",
+        "pos": "-0.006 0 0.186",
+        "size": "0.003 0.11 0.075",
+        "rgba": "0.2 0.3 0.4 0",
+        "euler": "0 0.096 0",
+        "group": "3"
+      },
+      "after": {
+        "name": "bin_x1",
+        "type": "box",
+        "size": ".003 .11 .075",
+        "rgba": "0.2 0.3 0.4 0",
+        "group": "3",
+        "pos": "-.006 0 .186",
+        "euler": "0 .096 0"
+      }
+    },
+    {
+      "geom": "bin_y-1",
+      "before": {
+        "name": "bin_y-1",
+        "type": "box",
+        "pos": "-0.087 -0.1 0.186",
+        "size": "0.09 0.003 0.075",
+        "rgba": "0.2 0.3 0.4 0",
+        "euler": "0.092 0 0",
+        "group": "3"
+      },
+      "after": {
+        "name": "bin_y-1",
+        "type": "box",
+        "size": ".09 .003 .075",
+        "rgba": "0.2 0.3 0.4 0",
+        "group": "3",
+        "pos": "-.087 -.1 .186",
+        "euler": ".092 0 0"
+      }
+    },
+    {
+      "geom": "bin_y1",
+      "before": {
+        "name": "bin_y1",
+        "type": "box",
+        "pos": "-0.087 0.1 0.186",
+        "size": "0.09 0.003 0.075",
+        "rgba": "0.2 0.3 0.4 0",
+        "euler": "-0.092 0 0",
+        "group": "3"
+      },
+      "after": {
+        "name": "bin_y1",
+        "type": "box",
+        "size": ".09 .003 .075",
+        "rgba": "0.2 0.3 0.4 0",
+        "group": "3",
+        "pos": "-.087 .1 .186",
+        "euler": "-.092 0 0"
+      }
+    },
+    {
+      "replaced_capsule": "shoulder_link_proxy",
+      "convex_parts": 3
+    },
+    {
+      "replaced_capsule": "upper_arm_link_proxy",
+      "convex_parts": 2
+    },
+    {
+      "replaced_capsule": "lower_arm_link_proxy",
+      "convex_parts": 3
+    },
+    {
+      "replaced_capsule": "wrist_link_proxy",
+      "convex_parts": 2
+    },
+    {
+      "replaced_track_box": "track_-1",
+      "with": "V0.4 belt convex hull"
+    },
+    {
+      "replaced_track_box": "track_1",
+      "with": "V0.4 belt convex hull"
+    },
+    {
+      "diagnostic_self_contacts": "2/3 masks; no new exclusions; parent filtering retained"
+    }
+  ],
+  "collision_visual_pairs": [
+    {
+      "collision": "shoulder_link_proxy",
+      "visual": "visual_shoulder_link_0"
+    },
+    {
+      "collision": "shoulder_link_part_1_collision",
+      "visual": "visual_shoulder_link_1"
+    },
+    {
+      "collision": "shoulder_link_part_2_collision",
+      "visual": "visual_shoulder_link_2"
+    },
+    {
+      "collision": "upper_arm_link_proxy",
+      "visual": "visual_upper_arm_link_0"
+    },
+    {
+      "collision": "upper_arm_link_part_1_collision",
+      "visual": "visual_upper_arm_link_1"
+    },
+    {
+      "collision": "lower_arm_link_proxy",
+      "visual": "visual_lower_arm_link_0"
+    },
+    {
+      "collision": "lower_arm_link_part_1_collision",
+      "visual": "visual_lower_arm_link_1"
+    },
+    {
+      "collision": "lower_arm_link_part_2_collision",
+      "visual": "visual_lower_arm_link_2"
+    },
+    {
+      "collision": "wrist_link_proxy",
+      "visual": "visual_wrist_link_0"
+    },
+    {
+      "collision": "wrist_link_part_1_collision",
+      "visual": "visual_wrist_link_1"
+    },
+    {
+      "collision": "track_-1",
+      "visual": "v04_belt_right"
+    },
+    {
+      "collision": "track_1",
+      "visual": "v04_belt_left"
+    }
+  ],
+  "unchanged_compiled_fields": [
+    "body_mass",
+    "body_inertia",
+    "body_ipos",
+    "body_iquat",
+    "body_pos",
+    "body_quat",
+    "jnt_type",
+    "jnt_bodyid",
+    "jnt_pos",
+    "jnt_axis",
+    "jnt_range",
+    "dof_damping",
+    "dof_armature",
+    "actuator_trnid",
+    "actuator_ctrlrange",
+    "actuator_forcerange",
+    "actuator_gainprm",
+    "actuator_biasprm",
+    "actuator_gear",
+    "eq_data",
+    "eq_obj1id",
+    "eq_obj2id",
+    "key_qpos",
+    "key_ctrl",
+    "cam_pos",
+    "cam_quat",
+    "cam_fovy",
+    "cam_intrinsic",
+    "cam_resolution"
+  ],
+  "collision_vertices_match_visual_parts": true,
+  "limitations": [
+    "Per-part convex hulls can overfill recesses and openings.",
+    "Hull, cover, arm base and gripper collision geometry remain legacy.",
+    "No new exclusions; self-contact variant is diagnostic only.",
+    "No actuator, controller, calibration, mass or camera changes.",
+    "No successful pickup, tuck or hardware safety claim."
+  ]
+}

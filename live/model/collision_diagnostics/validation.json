@@ -1,0 +1,177 @@
+{
+  "mujoco_version": "3.13.0",
+  "tests": {
+    "geometry": {
+      "unchanged_fields": [
+        "body_mass",
+        "body_inertia",
+        "body_ipos",
+        "body_iquat",
+        "body_pos",
+        "body_quat",
+        "jnt_type",
+        "jnt_bodyid",
+        "jnt_pos",
+        "jnt_axis",
+        "jnt_range",
+        "dof_damping",
+        "dof_armature",
+        "actuator_trnid",
+        "actuator_ctrlrange",
+        "actuator_forcerange",
+        "actuator_gainprm",
+        "actuator_biasprm",
+        "actuator_gear",
+        "eq_data",
+        "eq_obj1id",
+        "eq_obj2id",
+        "key_qpos",
+        "key_ctrl",
+        "cam_pos",
+        "cam_quat",
+        "cam_fovy",
+        "cam_intrinsic",
+        "cam_resolution"
+      ],
+      "visual_alignment": true
+    },
+    "self_contacts": {
+      "unchanged_fields": [
+        "body_mass",
+        "body_inertia",
+        "body_ipos",
+        "body_iquat",
+        "body_pos",
+        "body_quat",
+        "jnt_type",
+        "jnt_bodyid",
+        "jnt_pos",
+        "jnt_axis",
+        "jnt_range",
+        "dof_damping",
+        "dof_armature",
+        "actuator_trnid",
+        "actuator_ctrlrange",
+        "actuator_forcerange",
+        "actuator_gainprm",
+        "actuator_biasprm",
+        "actuator_gear",
+        "eq_data",
+        "eq_obj1id",
+        "eq_obj2id",
+        "key_qpos",
+        "key_ctrl",
+        "cam_pos",
+        "cam_quat",
+        "cam_fovy",
+        "cam_intrinsic",
+        "cam_resolution"
+      ],
+      "visual_alignment": true
+    },
+    "refuses_overwrite": true,
+    "refuses_different_bin_pose_before_writing": true,
+    "modified_host_preserved": {
+      "mass_kg": 3.5,
+      "extra_base_joints": 2,
+      "camera_preserved": true,
+      "finger_equality_preserved": true,
+      "unchanged_fields": [
+        "body_mass",
+        "body_inertia",
+        "body_ipos",
+        "body_iquat",
+        "body_pos",
+        "body_quat",
+        "jnt_type",
+        "jnt_bodyid",
+        "jnt_pos",
+        "jnt_axis",
+        "jnt_range",
+        "dof_damping",
+        "dof_armature",
+        "actuator_trnid",
+        "actuator_ctrlrange",
+        "actuator_forcerange",
+        "actuator_gainprm",
+        "actuator_biasprm",
+        "actuator_gear",
+        "eq_data",
+        "eq_obj1id",
+        "eq_obj2id",
+        "key_qpos",
+        "key_ctrl",
+        "cam_pos",
+        "cam_quat",
+        "cam_fovy",
+        "cam_intrinsic",
+        "cam_resolution"
+      ]
+    }
+  },
+  "poses": {
+    "geometry": {
+      "home": {
+        "penetrating_pairs_max_depth_mm": {},
+        "finger_positions_m": {
+          "finger_left": 0.03712509948486085,
+          "finger_right": 0.03687490051514213
+        },
+        "scope": "Kinematic pose only; no trajectory, settling or hardware validation."
+      },
+      "reported_tuck": {
+        "penetrating_pairs_max_depth_mm": {},
+        "finger_positions_m": {
+          "finger_left": 0.03712509948486085,
+          "finger_right": 0.03687490051514213
+        },
+        "scope": "Kinematic pose only; no trajectory, settling or hardware validation."
+      }
+    },
+    "self_contacts": {
+      "home": {
+        "penetrating_pairs_max_depth_mm": {},
+        "finger_positions_m": {
+          "finger_left": 0.03712509948486085,
+          "finger_right": 0.03687490051514213
+        },
+        "scope": "Kinematic pose only; no trajectory, settling or hardware validation."
+      },
+      "reported_tuck": {
+        "penetrating_pairs_max_depth_mm": {
+          "palm / shoulder_link_proxy": 7.518293953628111,
+          "palm / shoulder_link_part_1_collision": 12.187275308839622,
+          "palm / shoulder_link_part_2_collision": 38.51078794683544,
+          "gripper_mount / shoulder_link_proxy": 15.283891787121913,
+          "gripper_mount / shoulder_link_part_1_collision": 25.516047551701828,
+          "gripper_mount / shoulder_link_part_2_collision": 28.56927977510531,
+          "pad_right / shoulder_link_part_2_collision": 9.294041549836583,
+          "palm / upper_arm_link_part_1_collision": 2.438089435894505
+        },
+        "finger_positions_m": {
+          "finger_left": 0.03712509948486085,
+          "finger_right": 0.03687490051514213
+        },
+        "scope": "Kinematic pose only; no trajectory, settling or hardware validation."
+      }
+    },
+    "original": {
+      "home": {
+        "penetrating_pairs_max_depth_mm": {},
+        "finger_positions_m": {
+          "finger_left": 0.03712509948486085,
+          "finger_right": 0.03687490051514213
+        },
+        "scope": "Kinematic pose only; no trajectory, settling or hardware validation."
+      },
+      "reported_tuck": {
+        "penetrating_pairs_max_depth_mm": {},
+        "finger_positions_m": {
+          "finger_left": 0.03712509948486085,
+          "finger_right": 0.03687490051514213
+        },
+        "scope": "Kinematic pose only; no trajectory, settling or hardware validation."
+      }
+    }
+  }
+}
