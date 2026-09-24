@@ -1,0 +1,378 @@
+{
+  "package": "MOSS MuJoCo V0.2 portable release",
+  "validated_on": "2026-09-24",
+  "platform": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.14",
+    "mujoco": "3.13.0",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1"
+  },
+  "tests_passed": 23,
+  "tests_failed": 0,
+  "tested_from_extracted_archive": true,
+  "api_calls": 0,
+  "live_provider_tested": false,
+  "linux_rerun": false,
+  "http_smoke": {
+    "routes": [
+      "/",
+      "/live.js",
+      "/style.css",
+      "/SpaceGrotesk.ttf",
+      "/replay/assets/moss.glb",
+      "/replay/assets/three.module.js",
+      "/replay/assets/GLTFLoader.js",
+      "/replay/assets/BufferGeometryUtils.js",
+      "/replay/",
+      "/api/state"
+    ],
+    "api_default_off": true,
+    "key_absent": true,
+    "replay_start_pause": true
+  },
+  "checks": {
+    "readme_patch_applies": true,
+    "robot_only_import": true,
+    "mesh_paths_relative": true,
+    "visuals_preserve_inertia": true,
+    "visual_contact_pick_matches_original": true,
+    "generator_matches_original_mjcf": true
+  },
+  "replays": {
+    "original": {
+      "passed": true,
+      "results": [
+        {
+          "scenario": "can",
+          "passed": true,
+          "api_calls": 0,
+          "decisions": 8,
+          "error": null,
+          "final": {
+            "object_m": [
+              -0.1098,
+              0.0322,
+              0.1703
+            ],
+            "tcp_m": [
+              -0.0885,
+              -0.0001,
+              0.3536
+            ],
+            "finger_contacts": 0,
+            "held": false,
+            "in_bin": true,
+            "settled_in_bin": true,
+            "gap_mm": 82.0,
+            "last_action": "release",
+            "last_result": "Object settled in bin",
+            "attempts": 1,
+            "missed_grasps": 0,
+            "needs_regrasp": false,
+            "grasp_attempts_left": 3,
+            "sim_seconds": 20.31,
+            "moving": false,
+            "scenario": "can",
+            "object_speed_m_s": 0.0001,
+            "base_x_m": 0.0,
+            "bin_target_m": [
+              -0.087,
+              0.0,
+              0.36
+            ],
+            "reposition_notice": false,
+            "within_work_area": true
+          }
+        },
+        {
+          "scenario": "miss",
+          "passed": true,
+          "api_calls": 0,
+          "decisions": 10,
+          "error": null,
+          "final": {
+            "object_m": [
+              -0.0833,
+              -0.0278,
+              0.1697
+            ],
+            "tcp_m": [
+              -0.0885,
+              -0.0001,
+              0.3536
+            ],
+            "finger_contacts": 0,
+            "held": false,
+            "in_bin": true,
+            "settled_in_bin": true,
+            "gap_mm": 82.0,
+            "last_action": "release",
+            "last_result": "Object settled in bin",
+            "attempts": 1,
+            "missed_grasps": 0,
+            "needs_regrasp": false,
+            "grasp_attempts_left": 3,
+            "sim_seconds": 23.61,
+            "moving": false,
+            "scenario": "miss",
+            "object_speed_m_s": 0.0,
+            "base_x_m": 0.0,
+            "bin_target_m": [
+              -0.087,
+              0.0,
+              0.36
+            ],
+            "reposition_notice": false,
+            "within_work_area": true
+          }
+        },
+        {
+          "scenario": "far",
+          "passed": true,
+          "api_calls": 0,
+          "decisions": 9,
+          "error": null,
+          "final": {
+            "object_m": [
+              0.2425,
+              -0.0228,
+              0.1697
+            ],
+            "tcp_m": [
+              0.2365,
+              -0.0001,
+              0.3536
+            ],
+            "finger_contacts": 0,
+            "held": false,
+            "in_bin": true,
+            "settled_in_bin": true,
+            "gap_mm": 82.0,
+            "last_action": "release",
+            "last_result": "Object settled in bin",
+            "attempts": 1,
+            "missed_grasps": 0,
+            "needs_regrasp": false,
+            "grasp_attempts_left": 3,
+            "sim_seconds": 26.77,
+            "moving": false,
+            "scenario": "far",
+            "object_speed_m_s": 0.0,
+            "base_x_m": 0.325,
+            "bin_target_m": [
+              0.238,
+              0.0,
+              0.36
+            ],
+            "reposition_notice": false,
+            "within_work_area": true
+          }
+        }
+      ]
+    },
+    "visual": {
+      "passed": true,
+      "results": [
+        {
+          "scenario": "can",
+          "passed": true,
+          "api_calls": 0,
+          "decisions": 8,
+          "error": null,
+          "final": {
+            "object_m": [
+              -0.1098,
+              0.0322,
+              0.1703
+            ],
+            "tcp_m": [
+              -0.0885,
+              -0.0001,
+              0.3536
+            ],
+            "finger_contacts": 0,
+            "held": false,
+            "in_bin": true,
+            "settled_in_bin": true,
+            "gap_mm": 82.0,
+            "last_action": "release",
+            "last_result": "Object settled in bin",
+            "attempts": 1,
+            "missed_grasps": 0,
+            "needs_regrasp": false,
+            "grasp_attempts_left": 3,
+            "sim_seconds": 20.31,
+            "moving": false,
+            "scenario": "can",
+            "object_speed_m_s": 0.0001,
+            "base_x_m": 0.0,
+            "bin_target_m": [
+              -0.087,
+              0.0,
+              0.36
+            ],
+            "reposition_notice": false,
+            "within_work_area": true
+          }
+        },
+        {
+          "scenario": "miss",
+          "passed": true,
+          "api_calls": 0,
+          "decisions": 10,
+          "error": null,
+          "final": {
+            "object_m": [
+              -0.0833,
+              -0.0278,
+              0.1697
+            ],
+            "tcp_m": [
+              -0.0885,
+              -0.0001,
+              0.3536
+            ],
+            "finger_contacts": 0,
+            "held": false,
+            "in_bin": true,
+            "settled_in_bin": true,
+            "gap_mm": 82.0,
+            "last_action": "release",
+            "last_result": "Object settled in bin",
+            "attempts": 1,
+            "missed_grasps": 0,
+            "needs_regrasp": false,
+            "grasp_attempts_left": 3,
+            "sim_seconds": 23.61,
+            "moving": false,
+            "scenario": "miss",
+            "object_speed_m_s": 0.0,
+            "base_x_m": 0.0,
+            "bin_target_m": [
+              -0.087,
+              0.0,
+              0.36
+            ],
+            "reposition_notice": false,
+            "within_work_area": true
+          }
+        },
+        {
+          "scenario": "far",
+          "passed": true,
+          "api_calls": 0,
+          "decisions": 9,
+          "error": null,
+          "final": {
+            "object_m": [
+              0.2425,
+              -0.0228,
+              0.1697
+            ],
+            "tcp_m": [
+              0.2365,
+              -0.0001,
+              0.3536
+            ],
+            "finger_contacts": 0,
+            "held": false,
+            "in_bin": true,
+            "settled_in_bin": true,
+            "gap_mm": 82.0,
+            "last_action": "release",
+            "last_result": "Object settled in bin",
+            "attempts": 1,
+            "missed_grasps": 0,
+            "needs_regrasp": false,
+            "grasp_attempts_left": 3,
+            "sim_seconds": 26.77,
+            "moving": false,
+            "scenario": "far",
+            "object_speed_m_s": 0.0,
+            "base_x_m": 0.325,
+            "bin_target_m": [
+              0.238,
+              0.0,
+              0.36
+            ],
+            "reposition_notice": false,
+            "within_work_area": true
+          }
+        }
+      ]
+    }
+  },
+  "asset_sha256": {
+    "model/mesh_manifest.json": "6ee5013f4303b95957e30ecc95b176369ae4463c6292b76f74d58bb87ea9397a",
+    "model/meshes/base_link_0.stl": "76cc960718a7f53f82ba6e90c229f87c2c8677102c37a40b3402b0c844bfea89",
+    "model/meshes/base_link_1.stl": "208cae1647fb90a80fb161bca94418b0bb67c826f4ab1dab5a5c879552ecda98",
+    "model/meshes/base_link_2.stl": "819fbee3b0a2eb6a64845fae8b4dae6363e608f94aabbba46ec8215c6ba2bfdf",
+    "model/meshes/base_link_3.stl": "9c9b601f79b5b31f60458fc118c720baf573251c305081c5dd2fd1a67ad6bf9b",
+    "model/meshes/body_1.stl": "9eca0c193a4057454723d6ed38b6e406b02e7da24c71fe28b89451b8513c1273",
+    "model/meshes/body_10.stl": "41d352d97520b9ec17123d68b6882333ebdb795dcf8239d69a811f82dc8486bb",
+    "model/meshes/body_11.stl": "f1d4574e0336c5a77b30e9fdec684f346ebbdb26a93af244b8f890d5a8916d96",
+    "model/meshes/body_12.stl": "ee852deed7cfff2892cc3757e047374d6ecc00594826e4e9051496a02f947d28",
+    "model/meshes/body_13.stl": "873cccc39bfa1f41209c38b2c0553542649b4da1b42698af68a338d087830d61",
+    "model/meshes/body_14.stl": "3b9a37dd4340a6472737e7da90f9e74aa92d3b080e6bbda7e627f96833c9abce",
+    "model/meshes/body_15.stl": "b0a62f5897a0d6c2bd6b0be07966bff1cda101f27110f4944e54221654ffe630",
+    "model/meshes/body_16.stl": "9514d7ea7ac0e33f5a779077eaab7b826b0b0f6ffabe5690330a37c821fbeca1",
+    "model/meshes/body_17.stl": "97696533f426409e5376c15c498eb6a96612b98bdd8eb61a4789932a2799a4d1",
+    "model/meshes/body_18.stl": "55f41fff8b1fa1a8e86d4a993d44064f75edec0d912f838a577121621c0ad518",
+    "model/meshes/body_19.stl": "176a0367bc0355b9bdb3abe627a4f63d3cde5b420b985202dbb10f2225c6159e",
+    "model/meshes/body_2.stl": "c3f47372af99844c761df5f4192ab50f4a204b60afb251e16b752167fcae0a8a",
+    "model/meshes/body_20.stl": "0ea82a178e41220efc54d3f7b05af93e18b0b947317b003a8031a2221ce94cc4",
+    "model/meshes/body_21.stl": "2aae39992379c2fef358696e0b35400622aa463a9cf8c5263834d8910285eaa2",
+    "model/meshes/body_22.stl": "46b1ba13e54eee0277997546546eddb57723b997a486875c7b7f6a55180a043e",
+    "model/meshes/body_23.stl": "20e790984a8b16c3858bd569e6c6092ef937fcba745ae1ee7535ec8c5699b9a5",
+    "model/meshes/body_24.stl": "6cb1af800b80af96243825eafb9fdad7fb01994bad0eb92fa83e57eecdeb836a",
+    "model/meshes/body_25.stl": "f408104107f884da65a1acc1622a5840511daa9a3b100ec6aebfa7e8ff94802e",
+    "model/meshes/body_26.stl": "2ce572f99afc6a5b8b190e7cf90ef104b9e2b666e62710b1beb06a0231ddf49f",
+    "model/meshes/body_27.stl": "a9a57fcbd43ef4c440fa85a05785c7d7433e2e7bebaa6068152594c950f00d54",
+    "model/meshes/body_28.stl": "1a4a56ffa713cf40075d33a937ad19f599ba3ab9392dc9f907e30ef23e1b0ce3",
+    "model/meshes/body_31.stl": "7e8f964fcdf76bf2e2f507931f8c949ac5b011836ef6e49a7dc1a4b8ef30015f",
+    "model/meshes/body_32.stl": "1b41e69a966d6ab8f064f746d706b11499a704baad2e01ee16475ba0fb713a7f",
+    "model/meshes/body_35.stl": "0f1175fc9284010fee3be52caaab9a0188e7e52b79270b2016ba897466daa36d",
+    "model/meshes/body_36.stl": "4c70962a7b026073b83c3628eb89677b88b4deb3c2b2705bcb807b1f60da15f2",
+    "model/meshes/body_4.stl": "7b10bf86b4d82f64ee226c9986947bd742171cd869967c641333168e60e7463d",
+    "model/meshes/body_44.stl": "0bbbac71de4183ba5300ca21bbc9d836d8fef4a4bfc9b334cc6f86546cb054d0",
+    "model/meshes/body_45.stl": "89c9b208db97f72f4d4d5c4708f34c4a6f66a7861ddf3e70669416b945d6b43a",
+    "model/meshes/body_50.stl": "fd29c18bf9c0e64eb422156efd2ea9133d228429724be42d632d231d1a1d0b40",
+    "model/meshes/body_51.stl": "e0d35c7de84ee0e81415abac55ef5ab7a9f02f3e29d9b27febc3c72fde05b3b0",
+    "model/meshes/body_55.stl": "db2da5e7e9591fb78869142ce3baffe1b4b03e87363b87d9e47f08ceae06f9ff",
+    "model/meshes/body_56.stl": "ecfbe73948f2c386de9dd1ad705af898811db45182cef1febaac1bf344bbc877",
+    "model/meshes/body_9.stl": "e02180267001a1133770c45d3c60f2eee520b2551a80442554729d0e63f76eba",
+    "model/meshes/grip_132.stl": "a7f6a87686bd80261ae1febdae3fbf50eaee2a308a6b81dc9926fce94a76cde7",
+    "model/meshes/grip_133.stl": "55fc492f75eb688aa461864038b72bf896e5175857268d41bff298b53bb6494c",
+    "model/meshes/grip_134.stl": "48d0bdb0b3d7c05be692e36e0c380504be6325c3556093a75b209a7ceac6788d",
+    "model/meshes/grip_135.stl": "8cc8472644e34b31fdd3f706914410d64e39cc1d95d70a050abf12c2b2ab6fc0",
+    "model/meshes/grip_136.stl": "8cf7c5bed87079f0e107a7777f0e4f5784a54a2da364ad2962d7ba77abe750b4",
+    "model/meshes/grip_137.stl": "4e9ab8caad43a281a3b58e2c65f18ddebe10d061138cdaf9f07639a5300f9dc5",
+    "model/meshes/grip_141.stl": "7491783a85eba8c6d1ed3ae56849ffdc7abfdc126c7c21c8b32371fda1b9c3d4",
+    "model/meshes/grip_144.stl": "76b93cf3ba386a813065116004e386b8d01c8d03aebdc19191ca864f2f1880c2",
+    "model/meshes/grip_159.stl": "c94426ea4857a1a0ddda3e9941994d2be548b4080b3c439148ab9d1246d07da5",
+    "model/meshes/grip_160.stl": "4d6d15ff101539de870ccf057194a3c4b089747fa4d92f7c916a74abc0867c68",
+    "model/meshes/lower_arm_link_0.stl": "59f4215e03c430515904fab9cc857f144ef2bd74341bee012f4e1ec62821159d",
+    "model/meshes/lower_arm_link_1.stl": "2cbb01be1ffef0949b0c2dbbd7d462f7010aac78cf0ee5313a4e6a9b582ef7c0",
+    "model/meshes/lower_arm_link_2.stl": "4c314076cf647589d6f919f871e847507893d0168f7b5ebdc80208248009c128",
+    "model/meshes/shoulder_link_0.stl": "06aba91a426e25f004050bfe79658ff8ef15415c7678083b9be53f42c982231b",
+    "model/meshes/shoulder_link_1.stl": "474a087ea8149c3e373b3ad8f583887470eee522ef65a8b9bea5871d856831dc",
+    "model/meshes/shoulder_link_2.stl": "65c29cb880f59b6e042888bdc1990b078ee9aa35b30be2d94a65251d3e5c1d70",
+    "model/meshes/upper_arm_link_0.stl": "3b92835d809d775703c66a4e23c3107074d3ae1c75fa875e6ae2119e108b2ecf",
+    "model/meshes/upper_arm_link_1.stl": "33f263290418bfef20b9d32eeaa0e2eacc74e1e0dbc7dd8b58bb636674223c99",
+    "model/meshes/wrist_link_0.stl": "4d143a7fff523877d21de7ad9d85ef9e10210f35c5444870083b967aa41ebb83",
+    "model/meshes/wrist_link_1.stl": "e37ee4ef0718a21229b176780f828d79df24d568e0a9a7799cff6add0d133104",
+    "model/moss.xml": "3880bae65519197f9a3e7b497dceb2a4a6ff66d5b1096d391ab36fbac37065e5",
+    "model/moss_robot.xml": "da29c056fd34295a300a67ff327c6292b891cea36ee4c1b137e64b78da5ee52c",
+    "model/moss_visual.xml": "45b95b9f7e699798b3e3b4d4709643980f41db00c02abcf9cb4c74f9f0fa90e5",
+    "public/replay/assets/model-info.json": "2889a3abdfd9d91256c9b20e4dcb0b4308d86b8e5127c1158696ff2757df94f2",
+    "public/replay/assets/moss.glb": "1f791745ee59b0bd18f799e2027681af56e17281ea64892f27b99291660ca725",
+    "public/replay/assets/motion.json": "f5ca6b4052f43dbe878af5d38d339fa96a1f88ffaf25e1d640031bfa28f60073",
+    "public/replay/constraints.json": "eab9bca4095fb424474f8d2a0198191ce3c6a59610d5670bb906e525cf115acd",
+    "public/replay/replay.json": "1e4c5a901b90faf772b2bcb6429d0b2069a2790f6812acaa04597691f24b6b5a",
+    "recordings/can.json": "4d2476e1896a05880960a9610b11cfad57c092deef5c45ac314e457fb6d18a7e",
+    "recordings/far.json": "c3245c228619b61c73fcea20be0dc7e55dd9fc03ea92f73f651040f9a1e49fbd",
+    "recordings/miss.json": "44f647655258d31172be8bf4bbaec68b10b1a974e83b7730264e2a43bc7a4aab"
+  }
+}

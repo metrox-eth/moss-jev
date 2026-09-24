@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MOSS × Jev — Live lab</title><link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"./replay/assets/three.module.js"}}</script></head>
+<body>
+<header><a class="brand" href="/">MOSS <span>×</span> JEV<i></i></a>
+<span class="version-label" id="version-label">V0.2 · CONTACT PHYSICS</span>
+<div class="api-control"><div><strong id="mode-label">LIVE API</strong><small id="api-note">API OFF · FREE REPLAY</small></div><button id="api-toggle" role="switch" aria-checked="false" aria-label="Enable live Jev API"><span></span></button></div></header>
+<main><section class="arena"><div id="viewport" aria-label="Interactive MOSS physics scene"></div>
+<div class="mission"><div class="eyebrow">01 / GIVE IT A GOAL</div><h1>PICK IT UP.<br><em>MAKE IT REAL.</em></h1><p>Jev chooses. MOSS acts. Physics answers.</p></div>
+<div class="scene-tag">MUJOCO · LIVE PHYSICS<span>Mobile base / SO-101 / NC90 gripper</span></div>
+<div class="camera"><button id="zoom-out" aria-label="Zoom out">−</button><button id="zoom-in" aria-label="Zoom in">+</button><button id="camera-reset" aria-label="Reset camera">↺</button></div>
+<div class="status"><i></i><div><small id="phase">LOADING MOSS</small><strong id="action">Preparing the scene…</strong></div></div>
+<div id="reach-modal" role="dialog" aria-modal="true" aria-labelledby="reach-title" hidden><div><span class="eyebrow">A LITTLE TOO FAR</span><h2 id="reach-title">Object out of reach</h2><p>MOSS is repositioning</p><small>Move closer. Reach. Pick up.</small></div></div><div id="toast" role="status" hidden></div></section>
+<aside><div id="error" role="alert" hidden><strong id="error-title"></strong><p id="error-text"></p><a id="donate" href="https://github.com/sponsors/metrox-eth" target="_blank" rel="noopener noreferrer" hidden>DONATE ↗</a></div><div class="eyebrow">02 / JEV CHOOSES</div><h2 id="decision">Your call.<br>Its next move.</h2><p class="source" id="source">Recorded Jev decisions · no API calls</p><div id="probabilities"><p class="muted">Press Play replay to watch MOSS.<br>Turn Live on for new Jev decisions.</p></div>
+<div class="metrics"><div><small>ROUND TRIP</small><b id="latency">—</b></div><div><small>FINGER CONTACTS</small><b id="contacts">0 / 2</b></div></div>
+<div class="eyebrow">03 / PHYSICS ANSWERS</div><ol id="events"></ol><div class="cost"><span id="calls">0 calls</span><span id="cost">$0.000000</span></div>
+</aside></main>
+<iframe id="legacy-frame" title="MOSS V0.1 recorded Jev demo" hidden></iframe><footer><div class="goal"><label for="instruction">MISSION</label><input id="instruction" maxlength="300" value="Pick up the can and put it in the bin."></div><div class="transport"><button id="reset">RESET</button><button id="pause">PAUSE</button><button id="stop">STOP</button><button id="run" class="primary">PLAY REPLAY →</button></div></footer>
+<section class="bench"><div class="scenarios"><span>V0.2 · PHYSICS</span><button data-scene="can" class="selected">PICK UP A CAN</button><button data-scene="miss">RETRY A MISSED GRASP</button><button data-scene="far">MOVE CLOSER & PICK UP</button></div>
+<p id="scenario-description">Pick up a full-size can and drop it into the bin.</p>
+<div class="scenarios legacy"><span>V0.1 · RECORDED DEMOS</span><button data-legacy="cans">CANS ONLY</button><button data-legacy="bottles">BOTTLES ONLY</button><button data-legacy="all">CLEAN IT ALL</button><button data-legacy="home">COME HOME</button><button data-legacy="zone">RECYCLE + RED ZONE</button><button data-legacy="battery">LOW BATTERY</button><button data-legacy="bin">BIN FULL</button></div>
+<details><summary>Manual physics controls · no API calls</summary><p>These buttons directly test the motion primitives. They do not use Jev.</p><div id="manual"></div></details></section>
+<div class="disclosure"><span>Ground-truth state · simplified contact model · simulation only</span><a href="replay/licenses/NOTICE.txt">Credits</a><a href="https://github.com/sponsors/metrox-eth" target="_blank" rel="noopener noreferrer">Support MOSS ↗</a></div>
+<script type="module" src="live.js"></script></body></html>

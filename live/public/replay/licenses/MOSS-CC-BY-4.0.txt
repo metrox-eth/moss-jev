@@ -1,0 +1,10 @@
+MOSS original rover presentation geometry and documentation
+Copyright 2026 Laurent Genoud (Show Robotics).
+Source: https://github.com/metrox-eth/moss
+License: Creative Commons Attribution 4.0 International (CC BY 4.0).
+Full license terms: https://creativecommons.org/licenses/by/4.0/legalcode.en
+
+This file is a license reference, not a replacement for the full legal terms.
+Geometry was converted, recolored and simplified for simulation. It is not a
+manufacturing export. SO-101 and NormaCore components retain their separate
+Apache-2.0 terms. See ../../../NOTICE for attribution and file scopes.

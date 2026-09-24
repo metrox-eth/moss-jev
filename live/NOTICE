@@ -1,0 +1,36 @@
+MOSS × Jev CPU MuJoCo simulation
+Copyright 2026 Laurent Genoud (Show Robotics).
+Project: https://github.com/metrox-eth/moss
+
+MOSS Python/JavaScript/CSS/HTML implementation: Apache-2.0 (LICENSE).
+MOSS original rover presentation geometry (body_*.stl and the corresponding GLB
+parts), the original hull/bin/track design and documentation: CC BY 4.0,
+following the MOSS project NOTICE. License:
+https://creativecommons.org/licenses/by/4.0/
+This package contains simulation/presentation assets, not manufacturing CAD.
+
+SO-101 arm kinematics, inertias and visual geometry (model/so101.urdf,
+base_link_*.stl, shoulder_link_*.stl, upper_arm_link_*.stl,
+lower_arm_link_*.stl, wrist_link_*.stl and the corresponding GLB parts):
+TheRobotStudio SO-ARM100, Apache-2.0.
+https://github.com/TheRobotStudio/SO-ARM100
+License: public/replay/licenses/SO101-Apache-2.0.txt
+The arm URDF is a kinematics/inertia extract; visual and collision elements
+were removed because their original mesh references are not used by the generator.
+
+Parallel gripper geometry (grip_*.stl and the corresponding GLB parts):
+norma-core/norma-core, hardware/pgripper, Apache-2.0.
+https://github.com/norma-core/norma-core
+License: public/replay/licenses/NormaCore-Apache-2.0.txt
+
+Derived meshes were recolored, converted and simplified for simulation;
+jaw visuals were mapped onto the idealized sliding finger contact model.
+The assembled MJCF references these components with their respective licenses.
+
+Three.js and loader utilities: MIT (public/replay/licenses/Three-MIT.txt).
+Space Grotesk font: SIL Open Font License 1.1
+(public/replay/licenses/SpaceGrotesk-OFL.txt).
+
+Recorded mission choices were obtained from TypeSafe Jev via OpenRouter.
+No API credential or model weights are distributed. Attribution does not imply
+endorsement by the component authors or model provider.

@@ -1,0 +1,5 @@
+MOSS browser presentation assets. See ../../../NOTICE for complete scopes.
+MOSS rover geometry: CC BY 4.0; SO-101 and NormaCore geometry: Apache-2.0.
+Three.js: MIT. Space Grotesk: SIL OFL 1.1.
+The full Apache/MIT/OFL texts and a CC BY 4.0 license reference are provided.
+No manufacturing CAD is included.

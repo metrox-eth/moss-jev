@@ -1,0 +1,401 @@
+[
+  {
+    "mesh": "base_link_0.stl",
+    "body": "base_link",
+    "source_node": "base_link_0",
+    "source_triangles": 37540,
+    "triangles": 5000
+  },
+  {
+    "mesh": "base_link_1.stl",
+    "body": "base_link",
+    "source_node": "base_link_1",
+    "source_triangles": 9430,
+    "triangles": 5000
+  },
+  {
+    "mesh": "base_link_2.stl",
+    "body": "base_link",
+    "source_node": "base_link_2",
+    "source_triangles": 19080,
+    "triangles": 5000
+  },
+  {
+    "mesh": "base_link_3.stl",
+    "body": "base_link",
+    "source_node": "base_link_3",
+    "source_triangles": 1254,
+    "triangles": 1254
+  },
+  {
+    "mesh": "body_1.stl",
+    "body": "rover",
+    "source_node": "body_1",
+    "source_triangles": 79008,
+    "triangles": 4998
+  },
+  {
+    "mesh": "body_10.stl",
+    "body": "rover",
+    "source_node": "body_10",
+    "source_triangles": 8036,
+    "triangles": 5000
+  },
+  {
+    "mesh": "body_11.stl",
+    "body": "rover",
+    "source_node": "body_11",
+    "source_triangles": 1456,
+    "triangles": 1456
+  },
+  {
+    "mesh": "body_12.stl",
+    "body": "rover",
+    "source_node": "body_12",
+    "source_triangles": 10740,
+    "triangles": 5000
+  },
+  {
+    "mesh": "body_13.stl",
+    "body": "rover",
+    "source_node": "body_13",
+    "source_triangles": 2880,
+    "triangles": 2880
+  },
+  {
+    "mesh": "body_14.stl",
+    "body": "rover",
+    "source_node": "body_14",
+    "source_triangles": 11376,
+    "triangles": 5000
+  },
+  {
+    "mesh": "body_15.stl",
+    "body": "rover",
+    "source_node": "body_15",
+    "source_triangles": 2880,
+    "triangles": 2880
+  },
+  {
+    "mesh": "body_16.stl",
+    "body": "rover",
+    "source_node": "body_16",
+    "source_triangles": 8640,
+    "triangles": 5000
+  },
+  {
+    "mesh": "body_17.stl",
+    "body": "rover",
+    "source_node": "body_17",
+    "source_triangles": 8640,
+    "triangles": 5000
+  },
+  {
+    "mesh": "body_18.stl",
+    "body": "rover",
+    "source_node": "body_18",
+    "source_triangles": 8640,
+    "triangles": 5000
+  },
+  {
+    "mesh": "body_19.stl",
+    "body": "rover",
+    "source_node": "body_19",
+    "source_triangles": 7632,
+    "triangles": 5000
+  },
+  {
+    "mesh": "body_2.stl",
+    "body": "rover",
+    "source_node": "body_2",
+    "source_triangles": 41442,
+    "triangles": 5000
+  },
+  {
+    "mesh": "body_20.stl",
+    "body": "rover",
+    "source_node": "body_20",
+    "source_triangles": 8036,
+    "triangles": 5000
+  },
+  {
+    "mesh": "body_21.stl",
+    "body": "rover",
+    "source_node": "body_21",
+    "source_triangles": 1456,
+    "triangles": 1456
+  },
+  {
+    "mesh": "body_22.stl",
+    "body": "rover",
+    "source_node": "body_22",
+    "source_triangles": 10740,
+    "triangles": 5000
+  },
+  {
+    "mesh": "body_23.stl",
+    "body": "rover",
+    "source_node": "body_23",
+    "source_triangles": 2880,
+    "triangles": 2880
+  },
+  {
+    "mesh": "body_24.stl",
+    "body": "rover",
+    "source_node": "body_24",
+    "source_triangles": 11376,
+    "triangles": 5000
+  },
+  {
+    "mesh": "body_25.stl",
+    "body": "rover",
+    "source_node": "body_25",
+    "source_triangles": 2880,
+    "triangles": 2880
+  },
+  {
+    "mesh": "body_26.stl",
+    "body": "rover",
+    "source_node": "body_26",
+    "source_triangles": 8640,
+    "triangles": 5000
+  },
+  {
+    "mesh": "body_27.stl",
+    "body": "rover",
+    "source_node": "body_27",
+    "source_triangles": 8640,
+    "triangles": 5000
+  },
+  {
+    "mesh": "body_28.stl",
+    "body": "rover",
+    "source_node": "body_28",
+    "source_triangles": 8640,
+    "triangles": 5000
+  },
+  {
+    "mesh": "body_31.stl",
+    "body": "rover",
+    "source_node": "body_31",
+    "source_triangles": 35000,
+    "triangles": 4998
+  },
+  {
+    "mesh": "body_32.stl",
+    "body": "rover",
+    "source_node": "body_32",
+    "source_triangles": 1464,
+    "triangles": 1464
+  },
+  {
+    "mesh": "body_35.stl",
+    "body": "rover",
+    "source_node": "body_35",
+    "source_triangles": 2188,
+    "triangles": 2188
+  },
+  {
+    "mesh": "body_36.stl",
+    "body": "rover",
+    "source_node": "body_36",
+    "source_triangles": 35000,
+    "triangles": 4998
+  },
+  {
+    "mesh": "body_4.stl",
+    "body": "rover",
+    "source_node": "body_4",
+    "source_triangles": 8324,
+    "triangles": 4998
+  },
+  {
+    "mesh": "body_44.stl",
+    "body": "rover",
+    "source_node": "body_44",
+    "source_triangles": 5652,
+    "triangles": 4998
+  },
+  {
+    "mesh": "body_45.stl",
+    "body": "rover",
+    "source_node": "body_45",
+    "source_triangles": 5652,
+    "triangles": 4998
+  },
+  {
+    "mesh": "body_50.stl",
+    "body": "rover",
+    "source_node": "body_50",
+    "source_triangles": 5652,
+    "triangles": 4998
+  },
+  {
+    "mesh": "body_51.stl",
+    "body": "rover",
+    "source_node": "body_51",
+    "source_triangles": 5652,
+    "triangles": 4998
+  },
+  {
+    "mesh": "body_55.stl",
+    "body": "rover",
+    "source_node": "body_55",
+    "source_triangles": 11818,
+    "triangles": 4998
+  },
+  {
+    "mesh": "body_56.stl",
+    "body": "rover",
+    "source_node": "body_56",
+    "source_triangles": 8672,
+    "triangles": 5000
+  },
+  {
+    "mesh": "body_9.stl",
+    "body": "rover",
+    "source_node": "body_9",
+    "source_triangles": 7632,
+    "triangles": 5000
+  },
+  {
+    "mesh": "grip_132.stl",
+    "body": "gripper_frame_link",
+    "source_node": "grip_132",
+    "source_triangles": 34999,
+    "triangles": 4999
+  },
+  {
+    "mesh": "grip_133.stl",
+    "body": "finger_left",
+    "source_node": "grip_133",
+    "source_triangles": 15438,
+    "triangles": 5000
+  },
+  {
+    "mesh": "grip_134.stl",
+    "body": "finger_right",
+    "source_node": "grip_134",
+    "source_triangles": 15438,
+    "triangles": 5000
+  },
+  {
+    "mesh": "grip_135.stl",
+    "body": "gripper_frame_link",
+    "source_node": "grip_135",
+    "source_triangles": 19096,
+    "triangles": 4998
+  },
+  {
+    "mesh": "grip_136.stl",
+    "body": "gripper_frame_link",
+    "source_node": "grip_136",
+    "source_triangles": 11288,
+    "triangles": 5000
+  },
+  {
+    "mesh": "grip_137.stl",
+    "body": "gripper_frame_link",
+    "source_node": "grip_137",
+    "source_triangles": 3014,
+    "triangles": 3014
+  },
+  {
+    "mesh": "grip_141.stl",
+    "body": "gripper_frame_link",
+    "source_node": "grip_141",
+    "source_triangles": 35000,
+    "triangles": 4999
+  },
+  {
+    "mesh": "grip_144.stl",
+    "body": "gripper_frame_link",
+    "source_node": "grip_144",
+    "source_triangles": 11288,
+    "triangles": 5000
+  },
+  {
+    "mesh": "grip_159.stl",
+    "body": "finger_left",
+    "source_node": "grip_159",
+    "source_triangles": 2900,
+    "triangles": 2900
+  },
+  {
+    "mesh": "grip_160.stl",
+    "body": "finger_right",
+    "source_node": "grip_160",
+    "source_triangles": 2900,
+    "triangles": 2900
+  },
+  {
+    "mesh": "lower_arm_link_0.stl",
+    "body": "lower_arm_link",
+    "source_node": "lower_arm_link_0",
+    "source_triangles": 40610,
+    "triangles": 5000
+  },
+  {
+    "mesh": "lower_arm_link_1.stl",
+    "body": "lower_arm_link",
+    "source_node": "lower_arm_link_1",
+    "source_triangles": 21042,
+    "triangles": 5000
+  },
+  {
+    "mesh": "lower_arm_link_2.stl",
+    "body": "lower_arm_link",
+    "source_node": "lower_arm_link_2",
+    "source_triangles": 19080,
+    "triangles": 5000
+  },
+  {
+    "mesh": "shoulder_link_0.stl",
+    "body": "shoulder_link",
+    "source_node": "shoulder_link_0",
+    "source_triangles": 19080,
+    "triangles": 5000
+  },
+  {
+    "mesh": "shoulder_link_1.stl",
+    "body": "shoulder_link",
+    "source_node": "shoulder_link_1",
+    "source_triangles": 23470,
+    "triangles": 5000
+  },
+  {
+    "mesh": "shoulder_link_2.stl",
+    "body": "shoulder_link",
+    "source_node": "shoulder_link_2",
+    "source_triangles": 17672,
+    "triangles": 5000
+  },
+  {
+    "mesh": "upper_arm_link_0.stl",
+    "body": "upper_arm_link",
+    "source_node": "upper_arm_link_0",
+    "source_triangles": 19080,
+    "triangles": 5000
+  },
+  {
+    "mesh": "upper_arm_link_1.stl",
+    "body": "upper_arm_link",
+    "source_node": "upper_arm_link_1",
+    "source_triangles": 27336,
+    "triangles": 5000
+  },
+  {
+    "mesh": "wrist_link_0.stl",
+    "body": "wrist_link",
+    "source_node": "wrist_link_0",
+    "source_triangles": 17316,
+    "triangles": 5000
+  },
+  {
+    "mesh": "wrist_link_1.stl",
+    "body": "wrist_link",
+    "source_node": "wrist_link_1",
+    "source_triangles": 55048,
+    "triangles": 5000
+  }
+]

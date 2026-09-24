@@ -1,0 +1,330 @@
+<mujoco model="MOSS Jev V0.2 - robot only">
+  <compiler angle="radian" autolimits="true" meshdir="meshes" />
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic" iterations="80" />
+  <default>
+    <joint damping="0.15" armature="0.015" />
+    <geom friction="0.9 0.005 0.0001" solref="0.008 1" solimp="0.95 0.99 0.001" condim="4" />
+  </default>
+  <worldbody>
+    <body name="rover">
+      <joint name="base_x" type="slide" axis="1 0 0" range="0 .8" damping="40" />
+      <geom name="hull" type="box" pos="-0.015 0 0.065" size="0.13 0.093 0.035" rgba="0.2 0.3 0.4 0" group="3" />
+      <geom name="track_-1" type="box" pos="0 -0.122 0.049" size="0.14 0.019 0.045" rgba="0.2 0.3 0.4 0" group="3" />
+      <geom name="track_1" type="box" pos="0 0.122 0.049" size="0.14 0.019 0.045" rgba="0.2 0.3 0.4 0" group="3" />
+      <geom name="bin_floor" type="box" pos="-0.087 0 0.1102" size="0.077 0.096 0.002" rgba="0.2 0.3 0.4 0" group="3" />
+      <geom name="bin_x-1" type="box" pos="-0.168 0 0.186" size="0.003 0.11 0.075" rgba="0.2 0.3 0.4 0" euler="0 -0.096 0" group="3" />
+      <geom name="bin_y-1" type="box" pos="-0.087 -0.1 0.186" size="0.09 0.003 0.075" rgba="0.2 0.3 0.4 0" euler="0.092 0 0" group="3" />
+      <geom name="bin_x1" type="box" pos="-0.006 0 0.186" size="0.003 0.11 0.075" rgba="0.2 0.3 0.4 0" euler="0 0.096 0" group="3" />
+      <geom name="bin_y1" type="box" pos="-0.087 0.1 0.186" size="0.09 0.003 0.075" rgba="0.2 0.3 0.4 0" euler="-0.092 0 0" group="3" />
+      <body name="base_link" pos=".085 -.03 .1004" euler="0 0 1.308996939">
+        <body name="shoulder_link" pos="0.0388353 -8.97657e-09 0.0624" quat="1.76036379e-12 1.3267949e-06 -1 -1.3267949e-06">
+          <joint name="shoulder_pan" axis="0 0 1" range="-1.91986 1.91986" />
+          <body name="upper_arm_link" pos="-0.0303992 -0.0182778 -0.0542" quat="0.499998163 -0.5 -0.5 -0.500001837">
+            <joint name="shoulder_lift" axis="0 0 1" range="-1.74533 1.74533" />
+            <body name="lower_arm_link" pos="-0.11257 -0.028 1.73763e-16" quat="0.707105483 -4.37667256e-16 1.80556438e-16 0.70710808">
+              <joint name="elbow_flex" axis="0 0 1" range="-1.69 1.69" />
+              <body name="wrist_link" pos="-0.1349 0.0052 3.62355e-17" quat="0.707105483 1.72955356e-15 -1.11624123e-15 -0.70710808">
+                <joint name="wrist_flex" axis="0 0 1" range="-1.65806 1.65806" />
+                <body name="gripper_link" pos="5.55112e-17 -0.0611 0.0181" quat="0.0172100725 -0.0172081335 0.706898659 0.706896017">
+                  <joint name="wrist_roll" axis="0 0 1" range="-2.74385 2.84121" />
+                  <body name="gripper_frame_link" pos="-0.0079 -0.000218121 -0.0981274" quat="1.3267949e-06 0 1 0">
+                    <geom name="palm" type="box" pos="-0.0079 0.000218 -0.059" euler="0 0 0.722112186" size=".060 .017 .008" mass=".1" rgba="0.2 0.3 0.4 0" contype="2" conaffinity="1" group="3" />
+                    <geom name="gripper_mount" type="box" pos="-0.0079 0.000218 -0.08" size=".018 .017 .018" mass=".05" rgba="0.2 0.3 0.4 0" contype="2" conaffinity="1" group="3" />
+                    <site name="tcp" pos="-0.0079 0.000218 -0.014" size=".002" />
+                    <body name="finger_left" pos="-0.00189670952 0.00550576923 0">
+                      <joint name="finger_left" type="slide" axis="0.75041131 0.660971154 0" range="0 .041" damping="2" armature=".002" />
+                      <geom name="pad_left" type="box" pos="0 0 -.014" euler="0 0 0.722112186" size=".004 .015 .018" mass=".025" friction="1.4 .01 .001" rgba="0.2 0.3 0.4 0" contype="2" conaffinity="1" group="3" />
+                      <inertial mass="0.025" pos="0.0 0.0 -0.014" quat="0.9355242674772614 0.0 0.0 0.3532624307241481" diaginertia="4.575e-06 2.8333333333333335e-06 2.0083333333333337e-06" />
+                      <geom name="visual_grip_133" type="mesh" mesh="visual_grip_133" rgba="0.22745098039215686 0.7372549019607844 0.6666666666666666 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+                      <geom name="visual_grip_159" type="mesh" mesh="visual_grip_159" rgba="0.17647058823529413 0.21176470588235294 0.24705882352941178 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+                    </body>
+                    <body name="finger_right" pos="-0.0139032905 -0.00506976923 0">
+                      <joint name="finger_right" type="slide" axis="-0.75041131 -0.660971154 -0" range="0 .041" damping="2" armature=".002" />
+                      <geom name="pad_right" type="box" pos="0 0 -.014" euler="0 0 0.722112186" size=".004 .015 .018" mass=".025" friction="1.4 .01 .001" rgba="0.2 0.3 0.4 0" contype="2" conaffinity="1" group="3" />
+                      <inertial mass="0.025" pos="0.0 0.0 -0.014" quat="0.9355242674772614 0.0 0.0 0.3532624307241481" diaginertia="4.575e-06 2.8333333333333335e-06 2.0083333333333337e-06" />
+                      <geom name="visual_grip_134" type="mesh" mesh="visual_grip_134" rgba="0.22745098039215686 0.7372549019607844 0.6666666666666666 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+                      <geom name="visual_grip_160" type="mesh" mesh="visual_grip_160" rgba="0.17647058823529413 0.21176470588235294 0.24705882352941178 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+                    </body>
+                    <inertial mass="0.15000000000000002" pos="-0.0079 0.00021799999999999999 -0.06599999999999999" quat="0.29197475721239935 0.29197475721239935 0.6440114448911306 0.6440114448911306" diaginertia="0.00014737924299075433 0.00013984999999999996 3.693742367591231e-05" />
+                    <geom name="visual_grip_132" type="mesh" mesh="visual_grip_132" rgba="0.22745098039215686 0.7372549019607844 0.6666666666666666 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+                    <geom name="visual_grip_135" type="mesh" mesh="visual_grip_135" rgba="0.17647058823529413 0.21176470588235294 0.24705882352941178 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+                    <geom name="visual_grip_136" type="mesh" mesh="visual_grip_136" rgba="0.22745098039215686 0.7372549019607844 0.6666666666666666 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+                    <geom name="visual_grip_137" type="mesh" mesh="visual_grip_137" rgba="0.17647058823529413 0.21176470588235294 0.24705882352941178 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+                    <geom name="visual_grip_141" type="mesh" mesh="visual_grip_141" rgba="0.17647058823529413 0.21176470588235294 0.24705882352941178 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+                    <geom name="visual_grip_144" type="mesh" mesh="visual_grip_144" rgba="0.22745098039215686 0.7372549019607844 0.6666666666666666 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+                  </body>
+                  <inertial pos="0.000213627 0.000245138 -0.025187" mass="0.087" fullinertia="2.75087e-05 4.33657e-05 3.45059e-05 -3.35241e-07 -5.7352e-06 -5.17847e-08" />
+                </body>
+                <inertial pos="-0.000103312 -0.0386143 0.0281156" mass="0.079" fullinertia="3.68263e-05 2.5391e-05 2.1e-05 1.7893e-08 -5.28128e-08 3.6412e-06" />
+                <geom name="wrist_link_proxy" type="capsule" fromto="0 0 0 5.55112e-17 -0.0611 0.0181" size=".013" contype="2" conaffinity="1" group="3" rgba="0.2 0.3 0.4 0" />
+                <geom name="visual_wrist_link_0" type="mesh" mesh="visual_wrist_link_0" rgba="0.14901960784313725 0.16862745098039217 0.19607843137254902 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+                <geom name="visual_wrist_link_1" type="mesh" mesh="visual_wrist_link_1" rgba="0.8980392156862745 0.5529411764705883 0.5019607843137255 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+              </body>
+              <inertial pos="-0.0980701 0.00324376 0.0182831" mass="0.104" fullinertia="2.87438e-05 0.000159844 0.00014529 7.41152e-06 1.26409e-06 -4.90188e-08" />
+              <geom name="lower_arm_link_proxy" type="capsule" fromto="0 0 0 -0.1349 0.0052 3.62355e-17" size=".013" contype="2" conaffinity="1" group="3" rgba="0.2 0.3 0.4 0" />
+              <geom name="visual_lower_arm_link_0" type="mesh" mesh="visual_lower_arm_link_0" rgba="0.8980392156862745 0.5529411764705883 0.5019607843137255 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+              <geom name="visual_lower_arm_link_1" type="mesh" mesh="visual_lower_arm_link_1" rgba="0.8980392156862745 0.5529411764705883 0.5019607843137255 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+              <geom name="visual_lower_arm_link_2" type="mesh" mesh="visual_lower_arm_link_2" rgba="0.14901960784313725 0.16862745098039217 0.19607843137254902 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+            </body>
+            <inertial pos="-0.0898471 -0.00838224 0.0184089" mass="0.103" fullinertia="4.08002e-05 0.000147318 0.000142487 -1.97819e-05 -4.03016e-08 8.97326e-09" />
+            <geom name="upper_arm_link_proxy" type="capsule" fromto="0 0 0 -0.11257 -0.028 1.73763e-16" size=".013" contype="2" conaffinity="1" group="3" rgba="0.2 0.3 0.4 0" />
+            <geom name="visual_upper_arm_link_0" type="mesh" mesh="visual_upper_arm_link_0" rgba="0.14901960784313725 0.16862745098039217 0.19607843137254902 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+            <geom name="visual_upper_arm_link_1" type="mesh" mesh="visual_upper_arm_link_1" rgba="0.8980392156862745 0.5529411764705883 0.5019607843137255 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+          </body>
+          <inertial pos="-0.0307604 -1.66727e-05 -0.0252713" mass="0.100006" fullinertia="8.3759e-05 8.10403e-05 2.39783e-05 7.55525e-08 -1.16342e-06 1.54663e-07" />
+          <geom name="shoulder_link_proxy" type="capsule" fromto="0 0 0 -0.0303992 -0.0182778 -0.0542" size=".013" contype="2" conaffinity="1" group="3" rgba="0.2 0.3 0.4 0" />
+          <geom name="visual_shoulder_link_0" type="mesh" mesh="visual_shoulder_link_0" rgba="0.14901960784313725 0.16862745098039217 0.19607843137254902 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+          <geom name="visual_shoulder_link_1" type="mesh" mesh="visual_shoulder_link_1" rgba="0.8980392156862745 0.5529411764705883 0.5019607843137255 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+          <geom name="visual_shoulder_link_2" type="mesh" mesh="visual_shoulder_link_2" rgba="0.8980392156862745 0.5529411764705883 0.5019607843137255 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+        </body>
+        <inertial pos="0.0137179 -5.19711e-05 0.0334843" mass="0.147" fullinertia="0.000114686 0.000136117 0.000130364 -4.59787e-07 4.97151e-06 9.75275e-08" />
+        <geom name="visual_base_link_0" type="mesh" mesh="visual_base_link_0" rgba="0.8980392156862745 0.5529411764705883 0.5019607843137255 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+        <geom name="visual_base_link_1" type="mesh" mesh="visual_base_link_1" rgba="0.8980392156862745 0.5529411764705883 0.5019607843137255 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+        <geom name="visual_base_link_2" type="mesh" mesh="visual_base_link_2" rgba="0.14901960784313725 0.16862745098039217 0.19607843137254902 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+        <geom name="visual_base_link_3" type="mesh" mesh="visual_base_link_3" rgba="0.8980392156862745 0.5529411764705883 0.5019607843137255 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      </body>
+      <inertial mass="6.1386720000000015" pos="-0.020152186661870835 9.377445777655876e-19 0.07507102096349176" quat="0.5577883299535182 0.5577883299535182 -0.43459426936818507 0.43459426936818507" diaginertia="0.0853277136911578 0.056652169661549505 0.05457497621354487" />
+      <geom name="visual_body_1" type="mesh" mesh="visual_body_1" rgba="0.14901960784313725 0.18823529411764706 0.23529411764705882 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_10" type="mesh" mesh="visual_body_10" rgba="0.8980392156862745 0.5529411764705883 0.5019607843137255 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_11" type="mesh" mesh="visual_body_11" rgba="0.1568627450980392 0.18823529411764706 0.22745098039215686 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_12" type="mesh" mesh="visual_body_12" rgba="0.1568627450980392 0.18823529411764706 0.22745098039215686 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_13" type="mesh" mesh="visual_body_13" rgba="0.1568627450980392 0.18823529411764706 0.22745098039215686 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_14" type="mesh" mesh="visual_body_14" rgba="0.1568627450980392 0.18823529411764706 0.22745098039215686 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_15" type="mesh" mesh="visual_body_15" rgba="0.1568627450980392 0.18823529411764706 0.22745098039215686 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_16" type="mesh" mesh="visual_body_16" rgba="0.1568627450980392 0.18823529411764706 0.22745098039215686 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_17" type="mesh" mesh="visual_body_17" rgba="0.1568627450980392 0.18823529411764706 0.22745098039215686 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_18" type="mesh" mesh="visual_body_18" rgba="0.1568627450980392 0.18823529411764706 0.22745098039215686 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_19" type="mesh" mesh="visual_body_19" rgba="0.8980392156862745 0.5529411764705883 0.5019607843137255 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_2" type="mesh" mesh="visual_body_2" rgba="0.14901960784313725 0.18823529411764706 0.23529411764705882 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_20" type="mesh" mesh="visual_body_20" rgba="0.8980392156862745 0.5529411764705883 0.5019607843137255 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_21" type="mesh" mesh="visual_body_21" rgba="0.1568627450980392 0.18823529411764706 0.22745098039215686 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_22" type="mesh" mesh="visual_body_22" rgba="0.1568627450980392 0.18823529411764706 0.22745098039215686 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_23" type="mesh" mesh="visual_body_23" rgba="0.1568627450980392 0.18823529411764706 0.22745098039215686 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_24" type="mesh" mesh="visual_body_24" rgba="0.1568627450980392 0.18823529411764706 0.22745098039215686 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_25" type="mesh" mesh="visual_body_25" rgba="0.1568627450980392 0.18823529411764706 0.22745098039215686 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_26" type="mesh" mesh="visual_body_26" rgba="0.1568627450980392 0.18823529411764706 0.22745098039215686 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_27" type="mesh" mesh="visual_body_27" rgba="0.1568627450980392 0.18823529411764706 0.22745098039215686 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_28" type="mesh" mesh="visual_body_28" rgba="0.1568627450980392 0.18823529411764706 0.22745098039215686 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_31" type="mesh" mesh="visual_body_31" rgba="0.30980392156862746 0.5294117647058824 0.6509803921568628 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_32" type="mesh" mesh="visual_body_32" rgba="0.1568627450980392 0.18823529411764706 0.22745098039215686 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_35" type="mesh" mesh="visual_body_35" rgba="0.1568627450980392 0.18823529411764706 0.22745098039215686 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_36" type="mesh" mesh="visual_body_36" rgba="0.30980392156862746 0.5294117647058824 0.6509803921568628 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_4" type="mesh" mesh="visual_body_4" rgba="0.8980392156862745 0.5529411764705883 0.5019607843137255 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_44" type="mesh" mesh="visual_body_44" rgba="0.8980392156862745 0.5529411764705883 0.5019607843137255 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_45" type="mesh" mesh="visual_body_45" rgba="0.8980392156862745 0.5529411764705883 0.5019607843137255 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_50" type="mesh" mesh="visual_body_50" rgba="0.8980392156862745 0.5529411764705883 0.5019607843137255 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_51" type="mesh" mesh="visual_body_51" rgba="0.8980392156862745 0.5529411764705883 0.5019607843137255 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_55" type="mesh" mesh="visual_body_55" rgba="0.1568627450980392 0.18823529411764706 0.22745098039215686 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_56" type="mesh" mesh="visual_body_56" rgba="0.1568627450980392 0.18823529411764706 0.22745098039215686 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="visual_body_9" type="mesh" mesh="visual_body_9" rgba="0.8980392156862745 0.5529411764705883 0.5019607843137255 1.0" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_0" type="box" size=".00425 .018 .004" pos="-0.125 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_1" type="box" size=".00425 .018 .004" pos="-0.1143206666020814 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_2" type="box" size=".00425 .018 .004" pos="-0.1036413332041628 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_3" type="box" size=".00425 .018 .004" pos="-0.09296199980624419 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_4" type="box" size=".00425 .018 .004" pos="-0.08228266640832559 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_5" type="box" size=".00425 .018 .004" pos="-0.07160333301040697 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_6" type="box" size=".00425 .018 .004" pos="-0.06092399961248837 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_7" type="box" size=".00425 .018 .004" pos="-0.050244666214569786 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_8" type="box" size=".00425 .018 .004" pos="-0.03956533281665117 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_9" type="box" size=".00425 .018 .004" pos="-0.028885999418732572 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_10" type="box" size=".00425 .018 .004" pos="-0.018206666020813958 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_11" type="box" size=".00425 .018 .004" pos="-0.007527332622895358 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_12" type="box" size=".00425 .018 .004" pos="0.003152000775023256 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_13" type="box" size=".00425 .018 .004" pos="0.013831334172941828 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_14" type="box" size=".00425 .018 .004" pos="0.024510667570860428 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_15" type="box" size=".00425 .018 .004" pos="0.035190000968779056 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_16" type="box" size=".00425 .018 .004" pos="0.045869334366697656 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_17" type="box" size=".00425 .018 .004" pos="0.056548667764616256 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_18" type="box" size=".00425 .018 .004" pos="0.06722800116253486 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_19" type="box" size=".00425 .018 .004" pos="0.07790733456045346 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_20" type="box" size=".00425 .018 .004" pos="0.08858666795837208 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_21" type="box" size=".00425 .018 .004" pos="0.09926600135629068 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_22" type="box" size=".00425 .018 .004" pos="0.10994533475420928 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_23" type="box" size=".00425 .018 .004" pos="0.12062466815212788 -0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_24" type="box" size=".00425 .018 .004" pos="0.13127183334716822 -0.121 0.07644945847915521" euler="0 0.17511115416795864 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_25" type="box" size=".00425 .018 .004" pos="0.14136034844413845 -0.121 0.07306772518883085" euler="0 0.471759304110142 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_26" type="box" size=".00425 .018 .004" pos="0.15001967782207293 -0.121 0.06688466190004558" euler="0 0.7684074540523238 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_27" type="box" size=".00425 .018 .004" pos="0.1564933712179699 -0.121 0.058440400492166006" euler="0 1.0650556039945072 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_28" type="box" size=".00425 .018 .004" pos="0.1602159082712806 -0.121 0.04847260360441727" euler="0 1.3617037539366905 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_29" type="box" size=".00425 .018 .004" pos="0.16086210050491737 -0.121 0.03785202487697157" euler="0 1.6583519038788739 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_30" type="box" size=".00425 .018 .004" pos="0.158375498710893 -0.121 0.027506442804094255" euler="0 1.9550000538210588 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_31" type="box" size=".00425 .018 .004" pos="0.1529733241657031 -0.121 0.018339613085375406" euler="0 2.251648203763242 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_32" type="box" size=".00425 .018 .004" pos="0.14512749290084825 -0.121 0.011152319528541205" euler="0 2.5482963537054255 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_33" type="box" size=".00425 .018 .004" pos="0.13552339068521843 -0.121 0.006572420234842856" euler="0 2.844944503647609 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_34" type="box" size=".00425 .018 .004" pos="0.12500000000000003 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_35" type="box" size=".00425 .018 .004" pos="0.11432066660208148 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_36" type="box" size=".00425 .018 .004" pos="0.10364133320416283 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_37" type="box" size=".00425 .018 .004" pos="0.09296199980624423 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_38" type="box" size=".00425 .018 .004" pos="0.08228266640832563 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_39" type="box" size=".00425 .018 .004" pos="0.07160333301040703 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_40" type="box" size=".00425 .018 .004" pos="0.06092399961248837 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_41" type="box" size=".00425 .018 .004" pos="0.05024466621456983 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_42" type="box" size=".00425 .018 .004" pos="0.03956533281665117 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_43" type="box" size=".00425 .018 .004" pos="0.028885999418732627 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_44" type="box" size=".00425 .018 .004" pos="0.018206666020813972 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_45" type="box" size=".00425 .018 .004" pos="0.007527332622895427 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_46" type="box" size=".00425 .018 .004" pos="-0.003152000775023228 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_47" type="box" size=".00425 .018 .004" pos="-0.013831334172941773 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_48" type="box" size=".00425 .018 .004" pos="-0.024510667570860484 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_49" type="box" size=".00425 .018 .004" pos="-0.03519000096877897 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_50" type="box" size=".00425 .018 .004" pos="-0.045869334366697684 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_51" type="box" size=".00425 .018 .004" pos="-0.05654866776461617 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_52" type="box" size=".00425 .018 .004" pos="-0.06722800116253477 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_53" type="box" size=".00425 .018 .004" pos="-0.07790733456045348 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_54" type="box" size=".00425 .018 .004" pos="-0.08858666795837197 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_55" type="box" size=".00425 .018 .004" pos="-0.09926600135629068 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_56" type="box" size=".00425 .018 .004" pos="-0.10994533475420917 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_57" type="box" size=".00425 .018 .004" pos="-0.12062466815212788 -0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_58" type="box" size=".00425 .018 .004" pos="-0.13127183334716808 -0.121 0.005550541520844776" euler="0 3.316703807757748 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_59" type="box" size=".00425 .018 .004" pos="-0.14136034844413842 -0.121 0.008932274811169136" euler="0 3.6133519576999342 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_60" type="box" size=".00425 .018 .004" pos="-0.15001967782207296 -0.121 0.015115338099954433" euler="0 3.9100001076421176 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_61" type="box" size=".00425 .018 .004" pos="-0.1564933712179699 -0.121 0.023559599507834015" euler="0 4.206648257584301 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_62" type="box" size=".00425 .018 .004" pos="-0.16021590827128063 -0.121 0.033527396395582755" euler="0 4.503296407526484 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_63" type="box" size=".00425 .018 .004" pos="-0.16086210050491737 -0.121 0.044147975123028455" euler="0 4.799944557468668 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_64" type="box" size=".00425 .018 .004" pos="-0.15837549871089301 -0.121 0.05449355719590571" euler="0 5.096592707410851 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_65" type="box" size=".00425 .018 .004" pos="-0.15297332416570314 -0.121 0.06366038691462457" euler="0 5.393240857353034 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_66" type="box" size=".00425 .018 .004" pos="-0.14512749290084828 -0.121 0.07084768047145878" euler="0 5.689889007295218 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_-1_67" type="box" size=".00425 .018 .004" pos="-0.13552339068521846 -0.121 0.07542757976515713" euler="0 5.986537157237401 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_0" type="box" size=".00425 .018 .004" pos="-0.125 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_1" type="box" size=".00425 .018 .004" pos="-0.1143206666020814 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_2" type="box" size=".00425 .018 .004" pos="-0.1036413332041628 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_3" type="box" size=".00425 .018 .004" pos="-0.09296199980624419 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_4" type="box" size=".00425 .018 .004" pos="-0.08228266640832559 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_5" type="box" size=".00425 .018 .004" pos="-0.07160333301040697 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_6" type="box" size=".00425 .018 .004" pos="-0.06092399961248837 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_7" type="box" size=".00425 .018 .004" pos="-0.050244666214569786 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_8" type="box" size=".00425 .018 .004" pos="-0.03956533281665117 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_9" type="box" size=".00425 .018 .004" pos="-0.028885999418732572 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_10" type="box" size=".00425 .018 .004" pos="-0.018206666020813958 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_11" type="box" size=".00425 .018 .004" pos="-0.007527332622895358 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_12" type="box" size=".00425 .018 .004" pos="0.003152000775023256 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_13" type="box" size=".00425 .018 .004" pos="0.013831334172941828 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_14" type="box" size=".00425 .018 .004" pos="0.024510667570860428 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_15" type="box" size=".00425 .018 .004" pos="0.035190000968779056 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_16" type="box" size=".00425 .018 .004" pos="0.045869334366697656 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_17" type="box" size=".00425 .018 .004" pos="0.056548667764616256 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_18" type="box" size=".00425 .018 .004" pos="0.06722800116253486 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_19" type="box" size=".00425 .018 .004" pos="0.07790733456045346 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_20" type="box" size=".00425 .018 .004" pos="0.08858666795837208 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_21" type="box" size=".00425 .018 .004" pos="0.09926600135629068 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_22" type="box" size=".00425 .018 .004" pos="0.10994533475420928 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_23" type="box" size=".00425 .018 .004" pos="0.12062466815212788 0.121 0.077" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_24" type="box" size=".00425 .018 .004" pos="0.13127183334716822 0.121 0.07644945847915521" euler="0 0.17511115416795864 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_25" type="box" size=".00425 .018 .004" pos="0.14136034844413845 0.121 0.07306772518883085" euler="0 0.471759304110142 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_26" type="box" size=".00425 .018 .004" pos="0.15001967782207293 0.121 0.06688466190004558" euler="0 0.7684074540523238 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_27" type="box" size=".00425 .018 .004" pos="0.1564933712179699 0.121 0.058440400492166006" euler="0 1.0650556039945072 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_28" type="box" size=".00425 .018 .004" pos="0.1602159082712806 0.121 0.04847260360441727" euler="0 1.3617037539366905 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_29" type="box" size=".00425 .018 .004" pos="0.16086210050491737 0.121 0.03785202487697157" euler="0 1.6583519038788739 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_30" type="box" size=".00425 .018 .004" pos="0.158375498710893 0.121 0.027506442804094255" euler="0 1.9550000538210588 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_31" type="box" size=".00425 .018 .004" pos="0.1529733241657031 0.121 0.018339613085375406" euler="0 2.251648203763242 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_32" type="box" size=".00425 .018 .004" pos="0.14512749290084825 0.121 0.011152319528541205" euler="0 2.5482963537054255 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_33" type="box" size=".00425 .018 .004" pos="0.13552339068521843 0.121 0.006572420234842856" euler="0 2.844944503647609 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_34" type="box" size=".00425 .018 .004" pos="0.12500000000000003 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_35" type="box" size=".00425 .018 .004" pos="0.11432066660208148 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_36" type="box" size=".00425 .018 .004" pos="0.10364133320416283 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_37" type="box" size=".00425 .018 .004" pos="0.09296199980624423 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_38" type="box" size=".00425 .018 .004" pos="0.08228266640832563 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_39" type="box" size=".00425 .018 .004" pos="0.07160333301040703 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_40" type="box" size=".00425 .018 .004" pos="0.06092399961248837 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_41" type="box" size=".00425 .018 .004" pos="0.05024466621456983 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_42" type="box" size=".00425 .018 .004" pos="0.03956533281665117 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_43" type="box" size=".00425 .018 .004" pos="0.028885999418732627 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_44" type="box" size=".00425 .018 .004" pos="0.018206666020813972 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_45" type="box" size=".00425 .018 .004" pos="0.007527332622895427 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_46" type="box" size=".00425 .018 .004" pos="-0.003152000775023228 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_47" type="box" size=".00425 .018 .004" pos="-0.013831334172941773 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_48" type="box" size=".00425 .018 .004" pos="-0.024510667570860484 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_49" type="box" size=".00425 .018 .004" pos="-0.03519000096877897 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_50" type="box" size=".00425 .018 .004" pos="-0.045869334366697684 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_51" type="box" size=".00425 .018 .004" pos="-0.05654866776461617 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_52" type="box" size=".00425 .018 .004" pos="-0.06722800116253477 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_53" type="box" size=".00425 .018 .004" pos="-0.07790733456045348 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_54" type="box" size=".00425 .018 .004" pos="-0.08858666795837197 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_55" type="box" size=".00425 .018 .004" pos="-0.09926600135629068 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_56" type="box" size=".00425 .018 .004" pos="-0.10994533475420917 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_57" type="box" size=".00425 .018 .004" pos="-0.12062466815212788 0.121 0.0050000000000000044" euler="0 0 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_58" type="box" size=".00425 .018 .004" pos="-0.13127183334716808 0.121 0.005550541520844776" euler="0 3.316703807757748 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_59" type="box" size=".00425 .018 .004" pos="-0.14136034844413842 0.121 0.008932274811169136" euler="0 3.6133519576999342 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_60" type="box" size=".00425 .018 .004" pos="-0.15001967782207296 0.121 0.015115338099954433" euler="0 3.9100001076421176 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_61" type="box" size=".00425 .018 .004" pos="-0.1564933712179699 0.121 0.023559599507834015" euler="0 4.206648257584301 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_62" type="box" size=".00425 .018 .004" pos="-0.16021590827128063 0.121 0.033527396395582755" euler="0 4.503296407526484 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_63" type="box" size=".00425 .018 .004" pos="-0.16086210050491737 0.121 0.044147975123028455" euler="0 4.799944557468668 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_64" type="box" size=".00425 .018 .004" pos="-0.15837549871089301 0.121 0.05449355719590571" euler="0 5.096592707410851 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_65" type="box" size=".00425 .018 .004" pos="-0.15297332416570314 0.121 0.06366038691462457" euler="0 5.393240857353034 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_66" type="box" size=".00425 .018 .004" pos="-0.14512749290084828 0.121 0.07084768047145878" euler="0 5.689889007295218 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+      <geom name="tread_1_67" type="box" size=".00425 .018 .004" pos="-0.13552339068521846 0.121 0.07542757976515713" euler="0 5.986537157237401 0" rgba=".18 .23 .27 1" contype="0" conaffinity="0" group="2" mass="0" />
+    </body>
+  </worldbody>
+  <actuator>
+    <position name="shoulder_pan" joint="shoulder_pan" kp="70" kv="3" forcerange="-2.2 2.2" inheritrange="1" />
+    <position name="shoulder_lift" joint="shoulder_lift" kp="70" kv="3" forcerange="-2.2 2.2" inheritrange="1" />
+    <position name="elbow_flex" joint="elbow_flex" kp="70" kv="3" forcerange="-2.2 2.2" inheritrange="1" />
+    <position name="wrist_flex" joint="wrist_flex" kp="70" kv="3" forcerange="-2.2 2.2" inheritrange="1" />
+    <position name="wrist_roll" joint="wrist_roll" kp="70" kv="3" forcerange="-2.2 2.2" inheritrange="1" />
+    <position name="finger_left" joint="finger_left" kp="700" kv="8" forcerange="-8 8" ctrlrange="0 .041" />
+    <position name="finger_right" joint="finger_right" kp="700" kv="8" forcerange="-8 8" ctrlrange="0 .041" />
+    <position name="base_x" joint="base_x" kp="3000" kv="300" ctrlrange="0 .8" forcerange="-200 200" />
+  </actuator>
+  <asset>
+    <mesh name="visual_base_link_0" file="base_link_0.stl" inertia="shell" />
+    <mesh name="visual_base_link_1" file="base_link_1.stl" inertia="shell" />
+    <mesh name="visual_base_link_2" file="base_link_2.stl" inertia="shell" />
+    <mesh name="visual_base_link_3" file="base_link_3.stl" inertia="shell" />
+    <mesh name="visual_body_1" file="body_1.stl" inertia="shell" />
+    <mesh name="visual_body_10" file="body_10.stl" inertia="shell" />
+    <mesh name="visual_body_11" file="body_11.stl" inertia="shell" />
+    <mesh name="visual_body_12" file="body_12.stl" inertia="shell" />
+    <mesh name="visual_body_13" file="body_13.stl" inertia="shell" />
+    <mesh name="visual_body_14" file="body_14.stl" inertia="shell" />
+    <mesh name="visual_body_15" file="body_15.stl" inertia="shell" />
+    <mesh name="visual_body_16" file="body_16.stl" inertia="shell" />
+    <mesh name="visual_body_17" file="body_17.stl" inertia="shell" />
+    <mesh name="visual_body_18" file="body_18.stl" inertia="shell" />
+    <mesh name="visual_body_19" file="body_19.stl" inertia="shell" />
+    <mesh name="visual_body_2" file="body_2.stl" inertia="shell" />
+    <mesh name="visual_body_20" file="body_20.stl" inertia="shell" />
+    <mesh name="visual_body_21" file="body_21.stl" inertia="shell" />
+    <mesh name="visual_body_22" file="body_22.stl" inertia="shell" />
+    <mesh name="visual_body_23" file="body_23.stl" inertia="shell" />
+    <mesh name="visual_body_24" file="body_24.stl" inertia="shell" />
+    <mesh name="visual_body_25" file="body_25.stl" inertia="shell" />
+    <mesh name="visual_body_26" file="body_26.stl" inertia="shell" />
+    <mesh name="visual_body_27" file="body_27.stl" inertia="shell" />
+    <mesh name="visual_body_28" file="body_28.stl" inertia="shell" />
+    <mesh name="visual_body_31" file="body_31.stl" inertia="shell" />
+    <mesh name="visual_body_32" file="body_32.stl" inertia="shell" />
+    <mesh name="visual_body_35" file="body_35.stl" inertia="shell" />
+    <mesh name="visual_body_36" file="body_36.stl" inertia="shell" />
+    <mesh name="visual_body_4" file="body_4.stl" inertia="shell" />
+    <mesh name="visual_body_44" file="body_44.stl" inertia="shell" />
+    <mesh name="visual_body_45" file="body_45.stl" inertia="shell" />
+    <mesh name="visual_body_50" file="body_50.stl" inertia="shell" />
+    <mesh name="visual_body_51" file="body_51.stl" inertia="shell" />
+    <mesh name="visual_body_55" file="body_55.stl" inertia="shell" />
+    <mesh name="visual_body_56" file="body_56.stl" inertia="shell" />
+    <mesh name="visual_body_9" file="body_9.stl" inertia="shell" />
+    <mesh name="visual_grip_132" file="grip_132.stl" inertia="shell" />
+    <mesh name="visual_grip_133" file="grip_133.stl" inertia="shell" />
+    <mesh name="visual_grip_134" file="grip_134.stl" inertia="shell" />
+    <mesh name="visual_grip_135" file="grip_135.stl" inertia="shell" />
+    <mesh name="visual_grip_136" file="grip_136.stl" inertia="shell" />
+    <mesh name="visual_grip_137" file="grip_137.stl" inertia="shell" />
+    <mesh name="visual_grip_141" file="grip_141.stl" inertia="shell" />
+    <mesh name="visual_grip_144" file="grip_144.stl" inertia="shell" />
+    <mesh name="visual_grip_159" file="grip_159.stl" inertia="shell" />
+    <mesh name="visual_grip_160" file="grip_160.stl" inertia="shell" />
+    <mesh name="visual_lower_arm_link_0" file="lower_arm_link_0.stl" inertia="shell" />
+    <mesh name="visual_lower_arm_link_1" file="lower_arm_link_1.stl" inertia="shell" />
+    <mesh name="visual_lower_arm_link_2" file="lower_arm_link_2.stl" inertia="shell" />
+    <mesh name="visual_shoulder_link_0" file="shoulder_link_0.stl" inertia="shell" />
+    <mesh name="visual_shoulder_link_1" file="shoulder_link_1.stl" inertia="shell" />
+    <mesh name="visual_shoulder_link_2" file="shoulder_link_2.stl" inertia="shell" />
+    <mesh name="visual_upper_arm_link_0" file="upper_arm_link_0.stl" inertia="shell" />
+    <mesh name="visual_upper_arm_link_1" file="upper_arm_link_1.stl" inertia="shell" />
+    <mesh name="visual_wrist_link_0" file="wrist_link_0.stl" inertia="shell" />
+    <mesh name="visual_wrist_link_1" file="wrist_link_1.stl" inertia="shell" />
+  </asset>
+  <keyframe>
+    <key name="home" qpos="9.624455271921862e-07 1.3400000084079058 -0.6432638550286961 0.4103882706317027 1.252337976675807 -0.04999824109020701 0.03712509948486085 0.03687490051514213" ctrl="1.34 -0.65 0.4 1.25 -0.05 0.037 0.037 0.0" />
+  </keyframe>
+</mujoco>

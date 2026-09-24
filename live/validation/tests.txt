@@ -1,0 +1,28 @@
+test_http_402_maps_to_credits_exhausted (test_sim.APITests.test_http_402_maps_to_credits_exhausted) ... ok
+test_contact_pick_and_drop (test_sim.PhysicsTests.test_contact_pick_and_drop) ... ok
+test_full_size_can_and_bin_containment (test_sim.PhysicsTests.test_full_size_can_and_bin_containment) ... ok
+test_missed_grasp_then_recovery (test_sim.PhysicsTests.test_missed_grasp_then_recovery) ... ok
+test_no_attachment_and_gravity (test_sim.PhysicsTests.test_no_attachment_and_gravity) ... ok
+test_out_of_reach_rejected (test_sim.PhysicsTests.test_out_of_reach_rejected) ... ok
+test_rover_repositions_and_collects (test_sim.PhysicsTests.test_rover_repositions_and_collects) ... ok
+test_late_decision_is_discarded_on_pause_reset_api_off (test_sim.SessionTests.test_late_decision_is_discarded_on_pause_reset_api_off) ... ok
+test_manual_makes_no_calls (test_sim.SessionTests.test_manual_makes_no_calls) ... ok
+test_no_fake_donation_error (test_sim.SessionTests.test_no_fake_donation_error) ... ok
+test_pause_and_resume_freeze_state (test_sim.SessionTests.test_pause_and_resume_freeze_state) ... ok
+test_repeated_decisions_stop_before_next_motion (test_sim.SessionTests.test_repeated_decisions_stop_before_next_motion) ... ok
+test_replay_accepts_linux_resting_pose_after_release (test_sim.SessionTests.test_replay_accepts_linux_resting_pose_after_release) ... ok
+test_replay_keeps_position_check_before_release (test_sim.SessionTests.test_replay_keeps_position_check_before_release) ... ok
+test_replay_keeps_position_check_for_further_manipulation (test_sim.SessionTests.test_replay_keeps_position_check_for_further_manipulation) ... ok
+test_replay_rejects_changed_release_outcome_even_at_recorded_position (test_sim.SessionTests.test_replay_rejects_changed_release_outcome_even_at_recorded_position) ... ok
+test_replay_without_key_or_api_calls (test_sim.SessionTests.test_replay_without_key_or_api_calls) ... ok
+test_reset_keeps_cost_and_call_count (test_sim.SessionTests.test_reset_keeps_cost_and_call_count) ... ok
+test_all_visual_replays_offline (test_portable.PortableTests.test_all_visual_replays_offline) ... ok
+test_mesh_paths_resolve_and_stay_in_package (test_portable.PortableTests.test_mesh_paths_resolve_and_stay_in_package) ... ok
+test_robot_only_loads_at_home (test_portable.PortableTests.test_robot_only_loads_at_home) ... ok
+test_visual_motion_matches_original (test_portable.PortableTests.test_visual_motion_matches_original) ... ok
+test_visuals_preserve_inertia_and_control (test_portable.PortableTests.test_visuals_preserve_inertia_and_control) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 4.524s
+
+OK
