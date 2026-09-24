@@ -58,6 +58,18 @@ For a complete scene with ground, can, light and camera, use
 .venv/bin/mjpython view_model.py
 ```
 
+**V0.4 appearance (optional).** `model/visuals_v04/` updates the rover's look to the
+saved V0.4 hull assembly (longer cover, side assemblies, camera envelope) without
+touching masses, joints, contacts or the recorded missions:
+
+```sh
+cd model && python visuals_v04/apply_visuals.py moss_robot.xml moss_robot_v04_visual.xml
+```
+
+Known discrepancy: the CAD belts sit 266 mm apart, the legacy collision boxes
+244 mm. The overlay does not change the drive model; see
+[`model/visuals_v04/README.md`](model/visuals_v04/README.md).
+
 The robot-only file contains a home keyframe and eight actuators. Its base is
 constrained to a single X slide; importing it does not create a differential
 drive controller. See [INTEGRATION.md](INTEGRATION.md) for the joint contract,

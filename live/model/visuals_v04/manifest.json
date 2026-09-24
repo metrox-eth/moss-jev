@@ -1,0 +1,1565 @@
+{
+  "format": 1,
+  "purpose": "MOSS V0.4 rover visual overlay; not a new physics or manufacturing release",
+  "units": "metres",
+  "frame": "+X forward, +Y left, +Z up; vertices in the existing rover body frame",
+  "assembly": {
+    "file": "MOSS_Hull_V04_Cartes_INA90.step",
+    "sha256": "0cf72b2857e3185e67fb057ea9b0001d520faeb2d7062438fc2691f97941de76"
+  },
+  "hull": {
+    "file": "MOSS_hull_V04_cartes_INA90.step",
+    "sha256": "380d4aa2d4638d1fde7ea6d79a7d031229dbb53d8a824fb0a4444527c7955254"
+  },
+  "presentation_asset_manifest_sha256": "4f81555abae58d559142e1ecd71379b23e82013b614bc61e9a2297f2a7619716",
+  "track_centres_visual_m": [
+    -0.133,
+    0.133
+  ],
+  "legacy_collision_track_centres_m": [
+    -0.122,
+    0.122
+  ],
+  "nominal_camera_front_face_centre_m": [
+    0.156,
+    0,
+    0.075
+  ],
+  "camera_optical_calibration": null,
+  "battery_reference": "75 x 82 x 32 mm candidate volume; not measured installed battery",
+  "internal_components": "Original simplified envelopes at saved placements. Supplied/vendor CAD source files are not included.",
+  "meshes": [
+    {
+      "name": "v04_000_underbody",
+      "file": "meshes/v04_000_underbody.stl",
+      "label": "underbody",
+      "rgba": [
+        0.20784313725490197,
+        0.25098039215686274,
+        0.28627450980392155,
+        1
+      ],
+      "triangles": 3404,
+      "bounds_m": [
+        [
+          -0.16669999063014984,
+          -0.10719999670982361,
+          0.02160000056028366
+        ],
+        [
+          0.12099999934434891,
+          0.10719999670982361,
+          0.045499999076128006
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "e71934e24cdd9174fffec32de4bad46f425dfd7397895532f9f30d2ccc11667d",
+      "source_npz_sha256": "4b58870bbdf71a6b44310b4d7a8e6d4cfce3bca7eebc0cb41d208eca96f426d6"
+    },
+    {
+      "name": "v04_001_underbody",
+      "file": "meshes/v04_001_underbody.stl",
+      "label": "underbody",
+      "rgba": [
+        0.25098039215686274,
+        0.28627450980392155,
+        0.33725490196078434,
+        1
+      ],
+      "triangles": 5998,
+      "bounds_m": [
+        [
+          -0.046003732830286026,
+          0.04800190031528473,
+          0.051499269902706146
+        ],
+        [
+          -0.01600373163819313,
+          0.07800190150737762,
+          0.05899927020072937
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "bd98c77d887cdfbd64276252f06e5497a749ee0adaf3a776cd1fbd61bbf08492",
+      "source_npz_sha256": "cc503618f6625e2927dbfc40a59948816057827518bbf3e3766c1d31212384e2"
+    },
+    {
+      "name": "v04_002_cover",
+      "file": "meshes/v04_002_cover.stl",
+      "label": "cover",
+      "rgba": [
+        0.30980392156862746,
+        0.49411764705882355,
+        0.6313725490196078,
+        1
+      ],
+      "triangles": 3626,
+      "bounds_m": [
+        [
+          -0.1679999828338623,
+          -0.09544192999601364,
+          0.10100000351667404
+        ],
+        [
+          0.11800000071525574,
+          0.09543229639530182,
+          0.14759311079978943
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "3e088d633d161a31a18797ef29b0275d62b2ef40614ae8c63e0a269bb0ff48de",
+      "source_npz_sha256": "b87888c189c62c398cde904ed7b67523b2bcb232bcb1a8b5062d645596929054"
+    },
+    {
+      "name": "v04_003_track_left",
+      "file": "meshes/v04_003_track_left.stl",
+      "label": "track_left",
+      "rgba": [
+        0.20784313725490197,
+        0.25098039215686274,
+        0.28627450980392155,
+        1
+      ],
+      "triangles": 2464,
+      "bounds_m": [
+        [
+          -0.14100000262260437,
+          0.0989999920129776,
+          0.02160000056028366
+        ],
+        [
+          0.15699999034404755,
+          0.17000000178813934,
+          0.06159999594092369
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "256434871eebada6ec2beb9099ed877a10698427589d732b6d358a9d8d78165d",
+      "source_npz_sha256": "930e664e4332e3e40ca951bf014b76d9d4cc700488fae0c384108c019510ef0b"
+    },
+    {
+      "name": "v04_004_track_left",
+      "file": "meshes/v04_004_track_left.stl",
+      "label": "track_left",
+      "rgba": [
+        0.44313725490196076,
+        0.4745098039215686,
+        0.5215686274509804,
+        1
+      ],
+      "triangles": 5999,
+      "bounds_m": [
+        [
+          -0.14800000190734863,
+          0.09600000083446503,
+          0.02148096077144146
+        ],
+        [
+          0.15699999034404755,
+          0.17270000278949738,
+          0.06599999964237213
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "dbd27dc21397b492ebaf9bb6bdc5fe3785284cdfc0205812cd7a2939c803c859",
+      "source_npz_sha256": "122c5bc372507693651e4e5c62935eb68b98f708076c2817dfcb59c7abb0c661"
+    },
+    {
+      "name": "v04_005_track_left",
+      "file": "meshes/v04_005_track_left.stl",
+      "label": "track_left",
+      "rgba": [
+        0.6666666666666666,
+        0.7098039215686275,
+        0.7450980392156863,
+        1
+      ],
+      "triangles": 6000,
+      "bounds_m": [
+        [
+          -0.13467542827129364,
+          0.07699999958276749,
+          0.022197464480996132
+        ],
+        [
+          0.16499999165534973,
+          0.1850000023841858,
+          0.06304361671209335
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "060a0b8d35a05bacc2b114fe8511063e9b85506a113e4708e94570c822ff7a5c",
+      "source_npz_sha256": "9063f8e10d62655fe0ea1dfad9764f71cc21aed1f989559e9890ff27bfbc0b66"
+    },
+    {
+      "name": "v04_006_track_left",
+      "file": "meshes/v04_006_track_left.stl",
+      "label": "track_left",
+      "rgba": [
+        0.6666666666666666,
+        0.7098039215686275,
+        0.7450980392156863,
+        1
+      ],
+      "triangles": 1212,
+      "bounds_m": [
+        [
+          0.11382457613945007,
+          0.11890000104904175,
+          0.023007681593298912
+        ],
+        [
+          0.1441754251718521,
+          0.1468999981880188,
+          0.057399164885282516
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "f253d675f3e4597fc67b7f409a2cb9281a8257984b40e8d6c68ed87c180ac311",
+      "visual_rotation_centre_m": [
+        0.125,
+        0.133,
+        0.039614
+      ],
+      "nominal_radius_m": 0.035014,
+      "source_npz_sha256": "4f763f289d6ea16cf61e9e4ff85f375cabb35463a7cc230c51fb3fd4f097b2fe"
+    },
+    {
+      "name": "v04_007_track_left",
+      "file": "meshes/v04_007_track_left.stl",
+      "label": "track_left",
+      "rgba": [
+        0.20784313725490197,
+        0.25098039215686274,
+        0.28627450980392155,
+        1
+      ],
+      "triangles": 6000,
+      "bounds_m": [
+        [
+          0.09224187582731247,
+          0.12209999561309814,
+          0.006750000175088644
+        ],
+        [
+          0.15775811672210693,
+          0.14390000700950623,
+          0.07247817516326904
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "15db958bc3a4ed911308d812f65e6eabf534892d17f4aa0239d4bc8cae58a450",
+      "visual_rotation_centre_m": [
+        0.125,
+        0.133,
+        0.039614
+      ],
+      "nominal_radius_m": 0.035014,
+      "source_npz_sha256": "aeeb5fcac768102d0aabb2f6673d70623a3b04beaa98be694deffb4f982ed855"
+    },
+    {
+      "name": "v04_008_track_left",
+      "file": "meshes/v04_008_track_left.stl",
+      "label": "track_left",
+      "rgba": [
+        0.6666666666666666,
+        0.7098039215686275,
+        0.7450980392156863,
+        1
+      ],
+      "triangles": 1128,
+      "bounds_m": [
+        [
+          -0.07967542111873627,
+          0.11399999260902405,
+          0.016191668808460236
+        ],
+        [
+          -0.053824570029973984,
+          0.15199999511241913,
+          0.045166004449129105
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "0fad27aa8eedea2160397b92b920c5165ad4fa03907f359913c978ea9f644ec7",
+      "visual_rotation_centre_m": [
+        -0.07,
+        0.133,
+        0.0252
+      ],
+      "nominal_radius_m": 0.018,
+      "source_npz_sha256": "2fa6ead58eff169e6f07ce3f5b38e79e2b12fb91b619090fc5938023fbeecbb1"
+    },
+    {
+      "name": "v04_009_track_left",
+      "file": "meshes/v04_009_track_left.stl",
+      "label": "track_left",
+      "rgba": [
+        0.20784313725490197,
+        0.25098039215686274,
+        0.28627450980392155,
+        1
+      ],
+      "triangles": 2244,
+      "bounds_m": [
+        [
+          -0.09346669167280197,
+          0.11699999868869781,
+          0.0067083281464874744
+        ],
+        [
+          -0.04650000110268593,
+          0.14899998903274536,
+          0.053691670298576355
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "4efca30319ae17d5d84efc6329a6c3700132fdd1013128bc0162224a8010a3e9",
+      "visual_rotation_centre_m": [
+        -0.07,
+        0.133,
+        0.0252
+      ],
+      "nominal_radius_m": 0.018,
+      "source_npz_sha256": "e50d6ca7894bd3347a826ec9998ce5c2ff9b91db7476a4c929a017a95946fa61"
+    },
+    {
+      "name": "v04_010_track_left",
+      "file": "meshes/v04_010_track_left.stl",
+      "label": "track_left",
+      "rgba": [
+        0.6666666666666666,
+        0.7098039215686275,
+        0.7450980392156863,
+        1
+      ],
+      "triangles": 1128,
+      "bounds_m": [
+        [
+          -0.009675426408648491,
+          0.11399999260902405,
+          0.016191668808460236
+        ],
+        [
+          0.01617542654275894,
+          0.15199999511241913,
+          0.045166004449129105
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "d1cb4a791f1276a112a63c2cced3dbcbaf9327be59d9728fc97e45be01cadd4c",
+      "visual_rotation_centre_m": [
+        0.0,
+        0.133,
+        0.0252
+      ],
+      "nominal_radius_m": 0.018,
+      "source_npz_sha256": "4b485276aac22b3a6606a07a3eb9b722eabf4faacc9ca38c1f5b5e0e4d0e5055"
+    },
+    {
+      "name": "v04_011_track_left",
+      "file": "meshes/v04_011_track_left.stl",
+      "label": "track_left",
+      "rgba": [
+        0.20784313725490197,
+        0.25098039215686274,
+        0.28627450980392155,
+        1
+      ],
+      "triangles": 2244,
+      "bounds_m": [
+        [
+          -0.023466693237423897,
+          0.11699999868869781,
+          0.0067083281464874744
+        ],
+        [
+          0.023499999195337296,
+          0.14899998903274536,
+          0.053691670298576355
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "8149b73ee68699784b2f28288275f46de95532326eb98fd76be47e8b90bab94f",
+      "visual_rotation_centre_m": [
+        0.0,
+        0.133,
+        0.0252
+      ],
+      "nominal_radius_m": 0.018,
+      "source_npz_sha256": "debb02e9226bf0142163c61c2796402090f09ebad6cc637ea6d42cbef383313c"
+    },
+    {
+      "name": "v04_012_track_left",
+      "file": "meshes/v04_012_track_left.stl",
+      "label": "track_left",
+      "rgba": [
+        0.6666666666666666,
+        0.7098039215686275,
+        0.7450980392156863,
+        1
+      ],
+      "triangles": 1128,
+      "bounds_m": [
+        [
+          0.060324572026729584,
+          0.11399999260902405,
+          0.016191668808460236
+        ],
+        [
+          0.08617541939020157,
+          0.15199999511241913,
+          0.045166004449129105
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "4986ddb62d621c8d800700a5168a31e80cd42107db417766e105b4c17c4ea47e",
+      "visual_rotation_centre_m": [
+        0.07,
+        0.133,
+        0.0252
+      ],
+      "nominal_radius_m": 0.018,
+      "source_npz_sha256": "a8831f15badbccf9510ca6fc36a66862da716a8976fef6104038a5033b53fa97"
+    },
+    {
+      "name": "v04_013_track_left",
+      "file": "meshes/v04_013_track_left.stl",
+      "label": "track_left",
+      "rgba": [
+        0.20784313725490197,
+        0.25098039215686274,
+        0.28627450980392155,
+        1
+      ],
+      "triangles": 2244,
+      "bounds_m": [
+        [
+          0.04653330519795418,
+          0.11699999868869781,
+          0.0067083281464874744
+        ],
+        [
+          0.09350000321865082,
+          0.14899998903274536,
+          0.053691670298576355
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "b0e12b050cc7b35981e3228e35e5972580ecb00099a42e34e68cd9787a94273b",
+      "visual_rotation_centre_m": [
+        0.07,
+        0.133,
+        0.0252
+      ],
+      "nominal_radius_m": 0.018,
+      "source_npz_sha256": "3dd3a884c061feecbe5c56c9960880d769803f90ba2508b818a11a85345b40eb"
+    },
+    {
+      "name": "v04_014_track_right",
+      "file": "meshes/v04_014_track_right.stl",
+      "label": "track_right",
+      "rgba": [
+        0.20784313725490197,
+        0.25098039215686274,
+        0.28627450980392155,
+        1
+      ],
+      "triangles": 2464,
+      "bounds_m": [
+        [
+          -0.14100000262260437,
+          -0.17000000178813934,
+          0.02160000056028366
+        ],
+        [
+          0.15699999034404755,
+          -0.0989999920129776,
+          0.06159999594092369
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "5b88300734365e20bbe2fded0cf056b62ddacf8b1eea977beee257bd8f68bdcf",
+      "source_npz_sha256": "82ef4eae7cba1d06c5eec992f259c0531dacce6d75617448351096df25b9d71a"
+    },
+    {
+      "name": "v04_015_track_right",
+      "file": "meshes/v04_015_track_right.stl",
+      "label": "track_right",
+      "rgba": [
+        0.44313725490196076,
+        0.4745098039215686,
+        0.5215686274509804,
+        1
+      ],
+      "triangles": 5999,
+      "bounds_m": [
+        [
+          -0.14800000190734863,
+          -0.17270000278949738,
+          0.02148096077144146
+        ],
+        [
+          0.15699999034404755,
+          -0.09600000083446503,
+          0.06599999964237213
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "104c2537e1db0454a8c81896c0ea53a6f554cf1017e609d863ca7e050aa781f1",
+      "source_npz_sha256": "1780823b4e06fc05d6821677078981b6bf95dd9786920ff0977956df97d24af0"
+    },
+    {
+      "name": "v04_016_track_right",
+      "file": "meshes/v04_016_track_right.stl",
+      "label": "track_right",
+      "rgba": [
+        0.6666666666666666,
+        0.7098039215686275,
+        0.7450980392156863,
+        1
+      ],
+      "triangles": 6000,
+      "bounds_m": [
+        [
+          -0.13467542827129364,
+          -0.1850000023841858,
+          0.022197464480996132
+        ],
+        [
+          0.16499999165534973,
+          -0.07699999958276749,
+          0.06304361671209335
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "6322195a458af2d3553156ee351f76a1eda83c61f6c98867288d84711ee424f3",
+      "source_npz_sha256": "d403efdc323eda2205456d23137379ed5eb98e007c123a176a1f226bd7ab8c0e"
+    },
+    {
+      "name": "v04_017_track_right",
+      "file": "meshes/v04_017_track_right.stl",
+      "label": "track_right",
+      "rgba": [
+        0.6666666666666666,
+        0.7098039215686275,
+        0.7450980392156863,
+        1
+      ],
+      "triangles": 1212,
+      "bounds_m": [
+        [
+          0.11382457613945007,
+          -0.1468999981880188,
+          0.023007681593298912
+        ],
+        [
+          0.1441754251718521,
+          -0.11890000104904175,
+          0.057399164885282516
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "fbcc97d9a91fa8b648dbf68688493f843b27cb96484c1ebdebdd5140e98dae35",
+      "visual_rotation_centre_m": [
+        0.125,
+        -0.133,
+        0.039614
+      ],
+      "nominal_radius_m": 0.035014,
+      "source_npz_sha256": "e2273e566615b82311ad00b8e3123683e9c7ac4362ae6051c2033e57b2c805d0"
+    },
+    {
+      "name": "v04_018_track_right",
+      "file": "meshes/v04_018_track_right.stl",
+      "label": "track_right",
+      "rgba": [
+        0.20784313725490197,
+        0.25098039215686274,
+        0.28627450980392155,
+        1
+      ],
+      "triangles": 6000,
+      "bounds_m": [
+        [
+          0.09224187582731247,
+          -0.14390000700950623,
+          0.006750000175088644
+        ],
+        [
+          0.15775811672210693,
+          -0.12209999561309814,
+          0.07247817516326904
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "ccc2b943d48a62fec3605f072a52879b37f7522e79b33c7dd5633d21a0ba4a8a",
+      "visual_rotation_centre_m": [
+        0.125,
+        -0.133,
+        0.039614
+      ],
+      "nominal_radius_m": 0.035014,
+      "source_npz_sha256": "4b44e42b36b8935660f78a70ecc6c262170cc5937e4b13ca2307853e9acfb932"
+    },
+    {
+      "name": "v04_019_track_right",
+      "file": "meshes/v04_019_track_right.stl",
+      "label": "track_right",
+      "rgba": [
+        0.6666666666666666,
+        0.7098039215686275,
+        0.7450980392156863,
+        1
+      ],
+      "triangles": 1128,
+      "bounds_m": [
+        [
+          -0.07967542111873627,
+          -0.15199999511241913,
+          0.016191668808460236
+        ],
+        [
+          -0.053824570029973984,
+          -0.11399999260902405,
+          0.045166004449129105
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "a4d0f5ab41300ab4d34506e7c4e2882da6dd156ddf4eda4ab13e1ce53472ceaf",
+      "visual_rotation_centre_m": [
+        -0.07,
+        -0.133,
+        0.0252
+      ],
+      "nominal_radius_m": 0.018,
+      "source_npz_sha256": "7c76d39b2b3ce7fbedceb1d986f55e17edd4fe0b02eb82d09d7eeac1f9534509"
+    },
+    {
+      "name": "v04_020_track_right",
+      "file": "meshes/v04_020_track_right.stl",
+      "label": "track_right",
+      "rgba": [
+        0.20784313725490197,
+        0.25098039215686274,
+        0.28627450980392155,
+        1
+      ],
+      "triangles": 2244,
+      "bounds_m": [
+        [
+          -0.09346669167280197,
+          -0.14899998903274536,
+          0.0067083281464874744
+        ],
+        [
+          -0.04650000110268593,
+          -0.11699999868869781,
+          0.053691670298576355
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "c6ba9e5a7780b540948e13da4fadae25a9639da2bb1c104225564e7a3ac7b0c5",
+      "visual_rotation_centre_m": [
+        -0.07,
+        -0.133,
+        0.0252
+      ],
+      "nominal_radius_m": 0.018,
+      "source_npz_sha256": "874d0c5605bf724bd2f99937133627acb9787bdd12a6d30e30724506d16f373a"
+    },
+    {
+      "name": "v04_021_track_right",
+      "file": "meshes/v04_021_track_right.stl",
+      "label": "track_right",
+      "rgba": [
+        0.6666666666666666,
+        0.7098039215686275,
+        0.7450980392156863,
+        1
+      ],
+      "triangles": 1128,
+      "bounds_m": [
+        [
+          -0.009675426408648491,
+          -0.15199999511241913,
+          0.016191668808460236
+        ],
+        [
+          0.01617542654275894,
+          -0.11399999260902405,
+          0.045166004449129105
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "6535d113facc3fbf9d4735ee60e4ff521ff542668dd117b2967e6e30958f1425",
+      "visual_rotation_centre_m": [
+        0.0,
+        -0.133,
+        0.0252
+      ],
+      "nominal_radius_m": 0.018,
+      "source_npz_sha256": "c7a36f97338e3e13c9441839e5b090e8f1f65ccc793cf585c543ef31e8979639"
+    },
+    {
+      "name": "v04_022_track_right",
+      "file": "meshes/v04_022_track_right.stl",
+      "label": "track_right",
+      "rgba": [
+        0.20784313725490197,
+        0.25098039215686274,
+        0.28627450980392155,
+        1
+      ],
+      "triangles": 2244,
+      "bounds_m": [
+        [
+          -0.023466693237423897,
+          -0.14899998903274536,
+          0.0067083281464874744
+        ],
+        [
+          0.023499999195337296,
+          -0.11699999868869781,
+          0.053691670298576355
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "68a26b8583d9e577a3f4d35403388b47dcd98f628fd891e1166c024e23323fe0",
+      "visual_rotation_centre_m": [
+        0.0,
+        -0.133,
+        0.0252
+      ],
+      "nominal_radius_m": 0.018,
+      "source_npz_sha256": "57eb9545bb89d123a77d68955bcc1a9b58534e040f379a7a7546482b6be7cb8f"
+    },
+    {
+      "name": "v04_023_track_right",
+      "file": "meshes/v04_023_track_right.stl",
+      "label": "track_right",
+      "rgba": [
+        0.6666666666666666,
+        0.7098039215686275,
+        0.7450980392156863,
+        1
+      ],
+      "triangles": 1128,
+      "bounds_m": [
+        [
+          0.060324572026729584,
+          -0.15199999511241913,
+          0.016191668808460236
+        ],
+        [
+          0.08617541939020157,
+          -0.11399999260902405,
+          0.045166004449129105
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "bd4ca353683f985b7779968be3f26fc9188a26cec9e106f8b1ca0a256d253a21",
+      "visual_rotation_centre_m": [
+        0.07,
+        -0.133,
+        0.0252
+      ],
+      "nominal_radius_m": 0.018,
+      "source_npz_sha256": "20c03d54a66a6efe839cf56e538e627b2792703c464f2846507ce23ffebbf908"
+    },
+    {
+      "name": "v04_024_track_right",
+      "file": "meshes/v04_024_track_right.stl",
+      "label": "track_right",
+      "rgba": [
+        0.20784313725490197,
+        0.25098039215686274,
+        0.28627450980392155,
+        1
+      ],
+      "triangles": 2244,
+      "bounds_m": [
+        [
+          0.04653330519795418,
+          -0.14899998903274536,
+          0.0067083281464874744
+        ],
+        [
+          0.09350000321865082,
+          -0.11699999868869781,
+          0.053691670298576355
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "23d118ada9af3fc109085f3ebc6148d0efa93c08ebd31e09d4e8d00c194694b0",
+      "visual_rotation_centre_m": [
+        0.07,
+        -0.133,
+        0.0252
+      ],
+      "nominal_radius_m": 0.018,
+      "source_npz_sha256": "2cbf7d08ab578578a74d823eeffb89393a31b7cdaec3edc7cd5541eff8266215"
+    },
+    {
+      "name": "v04_025_track_left",
+      "file": "meshes/v04_025_track_left.stl",
+      "label": "track_left",
+      "rgba": [
+        0.44313725490196076,
+        0.4745098039215686,
+        0.5215686274509804,
+        1
+      ],
+      "triangles": 6000,
+      "bounds_m": [
+        [
+          -0.1577649563550949,
+          0.12209999561309814,
+          0.006744764279574156
+        ],
+        [
+          -0.0922376736998558,
+          0.14390000700950623,
+          0.07248210161924362
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "bece30d0952f848941d41cc7453e3b26a3dc9fdcce17ce95725934901659f090",
+      "visual_rotation_centre_m": [
+        -0.125,
+        0.133,
+        0.039614
+      ],
+      "nominal_radius_m": 0.035014,
+      "source_npz_sha256": "7fa9392ddede50c3aa125d2652bdfdeef643942b64f5c3ac9663b215982e24a4"
+    },
+    {
+      "name": "v04_026_track_left",
+      "file": "meshes/v04_026_track_left.stl",
+      "label": "track_left",
+      "rgba": [
+        0.6666666666666666,
+        0.7098039215686275,
+        0.7450980392156863,
+        1
+      ],
+      "triangles": 1272,
+      "bounds_m": [
+        [
+          -0.13617542386054993,
+          0.12159999459981918,
+          0.023007681593298912
+        ],
+        [
+          -0.10582457482814789,
+          0.1446000039577484,
+          0.056220490485429764
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "caf313bd6943aecedbb1746aad98244051605f322f187886d5ee35ce92aad815",
+      "visual_rotation_centre_m": [
+        -0.125,
+        0.133,
+        0.039614
+      ],
+      "nominal_radius_m": 0.035014,
+      "source_npz_sha256": "16f89f922f3048101029fe68c28c354bdcdd92ffca151807930381e146ed4e1f"
+    },
+    {
+      "name": "v04_027_track_right",
+      "file": "meshes/v04_027_track_right.stl",
+      "label": "track_right",
+      "rgba": [
+        0.44313725490196076,
+        0.4745098039215686,
+        0.5215686274509804,
+        1
+      ],
+      "triangles": 6000,
+      "bounds_m": [
+        [
+          -0.1577649563550949,
+          -0.14390000700950623,
+          0.006744764279574156
+        ],
+        [
+          -0.0922376736998558,
+          -0.12209999561309814,
+          0.07248210161924362
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "165e3ead4aa1c303d7736e762da8725df82b471bed13897c8d8dc07698da5ea2",
+      "visual_rotation_centre_m": [
+        -0.125,
+        -0.133,
+        0.039614
+      ],
+      "nominal_radius_m": 0.035014,
+      "source_npz_sha256": "4d284066cf092e2d95164777f4d65d2ea33a3d96ade655cd0d9ffc5eb45d3ee6"
+    },
+    {
+      "name": "v04_028_track_right",
+      "file": "meshes/v04_028_track_right.stl",
+      "label": "track_right",
+      "rgba": [
+        0.6666666666666666,
+        0.7098039215686275,
+        0.7450980392156863,
+        1
+      ],
+      "triangles": 1272,
+      "bounds_m": [
+        [
+          -0.13617542386054993,
+          -0.1446000039577484,
+          0.023007681593298912
+        ],
+        [
+          -0.10582457482814789,
+          -0.12159999459981918,
+          0.056220490485429764
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "5037d290cd872dd68b5d729f541b4b2c7d604533307f99feb44834803a9a6bbe",
+      "visual_rotation_centre_m": [
+        -0.125,
+        -0.133,
+        0.039614
+      ],
+      "nominal_radius_m": 0.035014,
+      "source_npz_sha256": "0e719d7cdf1f6e68d388ec9b175e5d40a579aec2947b1b25feb48457b4c277a6"
+    },
+    {
+      "name": "v04_029_arm_plate",
+      "file": "meshes/v04_029_arm_plate.stl",
+      "label": "arm_plate",
+      "rgba": [
+        0.2235294117647059,
+        0.2823529411764706,
+        0.3254901960784314,
+        1
+      ],
+      "triangles": 1388,
+      "bounds_m": [
+        [
+          0.019999999552965164,
+          -0.09099999815225601,
+          0.08999999612569809
+        ],
+        [
+          0.15199999511241913,
+          0.0860000029206276,
+          0.09779999405145645
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "56afdfb15f4fe821c3e1b8da4425abcb806d50b536f2207f9ffc751248271f7a",
+      "source_npz_sha256": "849e8d5a17761d3ee0e8ca022fba9b85cc480a25aa037b567f2beca05f2277aa"
+    },
+    {
+      "name": "v04_030_bin",
+      "file": "meshes/v04_030_bin.stl",
+      "label": "bin",
+      "rgba": [
+        0.30980392156862746,
+        0.49411764705882355,
+        0.6313725490196078,
+        1
+      ],
+      "triangles": 5999,
+      "bounds_m": [
+        [
+          -0.17899999022483826,
+          -0.11600000411272049,
+          0.10899820178747177
+        ],
+        [
+          0.004999999888241291,
+          0.11600000411272049,
+          0.260000079870224
+        ]
+      ],
+      "source": "retained_exterior_context_from_V04_animation",
+      "sha256": "01ed2618f9c0c847f1dbc5d28cfa3d99d83387d799ffb9bc6dff047afcbe3ad5",
+      "source_npz_sha256": "97813449f8f0d1a1c8983a84877843341eb077283d38c2c2c55495f02f44c6d0"
+    },
+    {
+      "name": "v04_hull",
+      "file": "meshes/v04_hull.stl",
+      "label": "Hull_V04",
+      "rgba": [
+        0.27450980392156865,
+        0.33725490196078434,
+        0.3843137254901961,
+        1
+      ],
+      "triangles": 30000,
+      "bounds_m": [
+        [
+          -0.17100001871585846,
+          -0.1185000017285347,
+          0.02149999886751175
+        ],
+        [
+          0.1600000113248825,
+          0.1185000017285347,
+          0.10100442171096802
+        ]
+      ],
+      "source": "saved_V04_assembly",
+      "sha256": "afc2cd5ab21c6ed8b0ff967e294ee5fa6e57f1fd9a4f14341dd10741ceac12cf",
+      "source_npz_sha256": "2d8b8311c64ba499c640360dee0e588dd0992c8578eb5722ab3ddd99bb069192"
+    },
+    {
+      "name": "v04_jetson",
+      "file": "meshes/v04_jetson.stl",
+      "label": "Jetson_avec_socle",
+      "rgba": [
+        0.1843137254901961,
+        0.4392156862745098,
+        0.3137254901960784,
+        1
+      ],
+      "triangles": 12,
+      "bounds_m": [
+        [
+          -0.0895,
+          -0.0455,
+          0.050000019073486335
+        ],
+        [
+          0.013499999999999998,
+          0.04525,
+          0.08476602172851563
+        ]
+      ],
+      "source": "approximate_envelope_from_saved_placement",
+      "sha256": "262993cb39f538a2810983c4af95d374428faf439a8f73b85fd3c5d083366dbd"
+    },
+    {
+      "name": "v04_cytron",
+      "file": "meshes/v04_cytron.stl",
+      "label": "Cytron_MDD3A",
+      "rgba": [
+        0.7607843137254902,
+        0.24313725490196078,
+        0.2,
+        1
+      ],
+      "triangles": 12,
+      "bounds_m": [
+        [
+          -0.15213000488281253,
+          -0.055827999114990236,
+          0.07547000122070313
+        ],
+        [
+          -0.10387000274658205,
+          -0.01417199993133545,
+          0.08897000122070314
+        ]
+      ],
+      "source": "approximate_envelope_from_saved_placement",
+      "sha256": "bfc1a1c7ddafb16d28b03551221c9eed6b60702a1ffcd0f88f2e2d543b1dbbaf"
+    },
+    {
+      "name": "v04_waveshare",
+      "file": "meshes/v04_waveshare.stl",
+      "label": "Waveshare_Servo_Adapter_A",
+      "rgba": [
+        0.19607843137254902,
+        0.3686274509803922,
+        0.6627450980392157,
+        1
+      ],
+      "triangles": 12,
+      "bounds_m": [
+        [
+          -0.046512073516845706,
+          0.046987903594970695,
+          0.05599999618530274
+        ],
+        [
+          -0.012695785522460937,
+          0.0890120849609375,
+          0.0705999984741211
+        ]
+      ],
+      "source": "approximate_envelope_from_saved_placement",
+      "sha256": "67eff62e437477ff2c0479b891cd4f1e0494122151f196790e712b81b7ff0d85"
+    },
+    {
+      "name": "v04_bff",
+      "file": "meshes/v04_bff.stl",
+      "label": "Bornier_BFF_6495",
+      "rgba": [
+        0.23137254901960785,
+        0.5764705882352941,
+        0.4196078431372549,
+        1
+      ],
+      "triangles": 12,
+      "bounds_m": [
+        [
+          -0.14723921203613283,
+          0.013409999847412112,
+          0.07912200164794922
+        ],
+        [
+          -0.11676078796386719,
+          0.056590000152587895,
+          0.09112200164794923
+        ]
+      ],
+      "source": "approximate_envelope_from_saved_placement",
+      "sha256": "0030e1c80ebd8f2a487f890bc1c6ddf83fbaeffa4ff8a0cd937d67f147646b07"
+    },
+    {
+      "name": "v04_qtpy",
+      "file": "meshes/v04_qtpy.stl",
+      "label": "QT_Py_ESP32_S3",
+      "rgba": [
+        0.27450980392156865,
+        0.2823529411764706,
+        0.3137254901960784,
+        1
+      ],
+      "triangles": 12,
+      "bounds_m": [
+        [
+          -0.14238900756835937,
+          0.026110000610351566,
+          0.08787999725341797
+        ],
+        [
+          -0.12063200378417971,
+          0.04388999938964844,
+          0.09375
+        ]
+      ],
+      "source": "approximate_envelope_from_saved_placement",
+      "sha256": "d6f95771b16b3a8c7f5f9c587756394b5511511aba3a2646bd9853d4390b593b"
+    },
+    {
+      "name": "v04_realsense",
+      "file": "meshes/v04_realsense.stl",
+      "label": "RealSense_D455_reference",
+      "rgba": [
+        0.6745098039215687,
+        0.7450980392156863,
+        0.7803921568627451,
+        1
+      ],
+      "triangles": 12,
+      "bounds_m": [
+        [
+          0.13,
+          -0.061999534606933596,
+          0.060500000000000005
+        ],
+        [
+          0.15600001525878904,
+          0.061999534606933596,
+          0.0894995346069336
+        ]
+      ],
+      "source": "approximate_envelope_from_saved_placement",
+      "sha256": "5f4734087157e021e3c8409cf9bd9d0737d504ce0d533d42c230fd03235f6e6b"
+    },
+    {
+      "name": "v04_camera_front",
+      "file": "meshes/v04_camera_front.stl",
+      "label": "Camera front panel",
+      "rgba": [
+        0.11764705882352941,
+        0.1450980392156863,
+        0.16470588235294117,
+        1
+      ],
+      "triangles": 12,
+      "bounds_m": [
+        [
+          0.1558,
+          -0.058,
+          0.064
+        ],
+        [
+          0.1562,
+          0.058,
+          0.086
+        ]
+      ],
+      "source": "illustrative_camera_face",
+      "sha256": "7829314e9b5a24f81b459371911ff13e196a066709bd5d9721b4b3eaa00c590b"
+    },
+    {
+      "name": "v04_camera_lens_0",
+      "file": "meshes/v04_camera_lens_0.stl",
+      "label": "Illustrative lens",
+      "rgba": [
+        0.30980392156862746,
+        0.4196078431372549,
+        0.47843137254901963,
+        1
+      ],
+      "triangles": 96,
+      "bounds_m": [
+        [
+          0.1562,
+          -0.051,
+          0.06999999999999999
+        ],
+        [
+          0.1568,
+          -0.041,
+          0.08
+        ]
+      ],
+      "source": "illustrative_camera_face",
+      "sha256": "41683b79bcf1b24ad4d9719b86182972629fe1225c0a278bd4b6ec7e338feff1"
+    },
+    {
+      "name": "v04_camera_lens_1",
+      "file": "meshes/v04_camera_lens_1.stl",
+      "label": "Illustrative lens",
+      "rgba": [
+        0.30980392156862746,
+        0.4196078431372549,
+        0.47843137254901963,
+        1
+      ],
+      "triangles": 96,
+      "bounds_m": [
+        [
+          0.1562,
+          -0.005,
+          0.06999999999999999
+        ],
+        [
+          0.1568,
+          0.005,
+          0.08
+        ]
+      ],
+      "source": "illustrative_camera_face",
+      "sha256": "33a915bc9fd4ee2501ec4f2033768220074ae0aed8a3185d5292f72ec071c46a"
+    },
+    {
+      "name": "v04_camera_lens_2",
+      "file": "meshes/v04_camera_lens_2.stl",
+      "label": "Illustrative lens",
+      "rgba": [
+        0.30980392156862746,
+        0.4196078431372549,
+        0.47843137254901963,
+        1
+      ],
+      "triangles": 96,
+      "bounds_m": [
+        [
+          0.1562,
+          0.041,
+          0.06999999999999999
+        ],
+        [
+          0.1568,
+          0.051,
+          0.08
+        ]
+      ],
+      "source": "illustrative_camera_face",
+      "sha256": "26e973acb2dd87bd0ffc9273259be7c8bbae0bf6a03134f981cfb6fcd924c7c7"
+    },
+    {
+      "name": "v04_battery",
+      "file": "meshes/v04_battery.stl",
+      "label": "Batterie_BLEUE_volume_candidat_75x82x32",
+      "rgba": [
+        0.1450980392156863,
+        0.3607843137254902,
+        0.8196078431372549,
+        1
+      ],
+      "triangles": 12,
+      "bounds_m": [
+        [
+          0.030000000000000006,
+          -0.057,
+          0.052000000000000005
+        ],
+        [
+          0.10500000000000001,
+          0.025,
+          0.084
+        ]
+      ],
+      "source": "approximate_envelope_from_saved_placement",
+      "sha256": "70136b89a680fb6e9c78a96f8615391898b03cb757fb113a871164646e030834"
+    },
+    {
+      "name": "v04_wire_red",
+      "file": "meshes/v04_wire_red.stl",
+      "label": "Batterie_fil_rouge",
+      "rgba": [
+        0.8705882352941177,
+        0.20784313725490197,
+        0.21568627450980393,
+        1
+      ],
+      "triangles": 12,
+      "bounds_m": [
+        [
+          0.0395,
+          -0.06877174377441407,
+          0.0665
+        ],
+        [
+          0.04528566360473633,
+          -0.056400001525878915,
+          0.0695
+        ]
+      ],
+      "source": "envelope_from_saved_placement",
+      "sha256": "47aa7b959de38f0bdc9a3a4dce2879a66481e31aee1f4f202868328852eefedc"
+    },
+    {
+      "name": "v04_wire_black",
+      "file": "meshes/v04_wire_black.stl",
+      "label": "Batterie_fil_noir",
+      "rgba": [
+        0.13725490196078433,
+        0.14901960784313725,
+        0.16470588235294117,
+        1
+      ],
+      "triangles": 12,
+      "bounds_m": [
+        [
+          0.0335,
+          -0.06877174377441407,
+          0.0665
+        ],
+        [
+          0.03928566360473633,
+          -0.056400001525878915,
+          0.0695
+        ]
+      ],
+      "source": "envelope_from_saved_placement",
+      "sha256": "154cba5e5688a06f5c934dfbbac01c706217cfe73867bccb1e6d9f041d328025"
+    },
+    {
+      "name": "v04_xt",
+      "file": "meshes/v04_xt.stl",
+      "label": "Connecteur_XT_gabarit",
+      "rgba": [
+        0.9490196078431372,
+        0.6980392156862745,
+        0.1803921568627451,
+        1
+      ],
+      "triangles": 12,
+      "bounds_m": [
+        [
+          0.033,
+          -0.08300000000000002,
+          0.062000000000000006
+        ],
+        [
+          0.049,
+          -0.067,
+          0.07400000000000001
+        ]
+      ],
+      "source": "approximate_envelope_from_saved_placement",
+      "sha256": "b3ecc4640f03b9f2f02634553cfda4919ddfcdf0a0b56498e15bbab741e55620"
+    },
+    {
+      "name": "v04_ina",
+      "file": "meshes/v04_ina.stl",
+      "label": "INA219_STEP_fourni_approchant",
+      "rgba": [
+        0.10980392156862745,
+        0.6274509803921569,
+        0.7019607843137254,
+        1
+      ],
+      "triangles": 12,
+      "bounds_m": [
+        [
+          0.0566500015258789,
+          0.0513499984741211,
+          0.05446699905395508
+        ],
+        [
+          0.07898019409179688,
+          0.07684999847412109,
+          0.07449501800537109
+        ]
+      ],
+      "source": "approximate_envelope_from_saved_placement",
+      "sha256": "24789d3303f657f810e2971b6cfc8c2625077e190412354b0ef5d75530db8e48"
+    },
+    {
+      "name": "v04_bracket_left",
+      "file": "meshes/v04_bracket_left.stl",
+      "label": "Support_moteur_V04_positif",
+      "rgba": [
+        0.20784313725490197,
+        0.27450980392156865,
+        0.3137254901960784,
+        1
+      ],
+      "triangles": 5999,
+      "bounds_m": [
+        [
+          -0.1599999964237213,
+          0.07050000131130219,
+          0.027000000700354576
+        ],
+        [
+          -0.09600000083446503,
+          0.10450000315904617,
+          0.0689999982714653
+        ]
+      ],
+      "source": "saved_V04_assembly",
+      "sha256": "a49c598edaf5be6a20f8dc58e5f5e7c325c3a0281db71c191638965815d1ce92",
+      "source_npz_sha256": "3062e25816ce9ce2b5df862040675099334d66fc96834ce8f7bdde707de04e1e"
+    },
+    {
+      "name": "v04_motor_left",
+      "file": "meshes/v04_motor_left.stl",
+      "label": "JGB37_520_reference_positif",
+      "rgba": [
+        0.6509803921568628,
+        0.6980392156862745,
+        0.7254901960784313,
+        1
+      ],
+      "triangles": 128,
+      "bounds_m": [
+        [
+          -0.1435,
+          0.01361843013763428,
+          0.028114089012145994
+        ],
+        [
+          -0.1065,
+          0.092,
+          0.06511408901214599
+        ]
+      ],
+      "source": "approximate_envelope_from_saved_placement",
+      "sha256": "a29c2f7f16090e591beb6adc3e46c45c7dd8b9285c1193555621308e7768964c"
+    },
+    {
+      "name": "v04_bracket_right",
+      "file": "meshes/v04_bracket_right.stl",
+      "label": "Support_moteur_V04_negatif",
+      "rgba": [
+        0.20784313725490197,
+        0.27450980392156865,
+        0.3137254901960784,
+        1
+      ],
+      "triangles": 5999,
+      "bounds_m": [
+        [
+          -0.1599999964237213,
+          -0.10450000315904617,
+          0.027000000700354576
+        ],
+        [
+          -0.09600000083446503,
+          -0.07050000131130219,
+          0.0689999982714653
+        ]
+      ],
+      "source": "saved_V04_assembly",
+      "sha256": "dff00c2e87d2fd16246827075399ff31df2bc6256ec62022a8ac1deb632de8fd",
+      "source_npz_sha256": "c8f38a1e82d3b5112af53fa4924498f90d4527fb900ae2c726adbc695cf48564"
+    },
+    {
+      "name": "v04_motor_right",
+      "file": "meshes/v04_motor_right.stl",
+      "label": "JGB37_520_reference_negatif",
+      "rgba": [
+        0.6509803921568628,
+        0.6980392156862745,
+        0.7254901960784313,
+        1
+      ],
+      "triangles": 128,
+      "bounds_m": [
+        [
+          -0.1435,
+          -0.092,
+          0.028114089012145994
+        ],
+        [
+          -0.1065,
+          -0.01361843013763428,
+          0.06511408901214599
+        ]
+      ],
+      "source": "approximate_envelope_from_saved_placement",
+      "sha256": "5123ab949591fb86781400808ad8eeefab87aaf5e36c52414115edc488a7c29a"
+    },
+    {
+      "name": "v04_belt_right",
+      "file": "meshes/v04_belt_right.stl",
+      "label": "Static visual belt",
+      "rgba": [
+        0.2196078431372549,
+        0.2549019607843137,
+        0.2823529411764706,
+        1
+      ],
+      "triangles": 6000,
+      "bounds_m": [
+        [
+          -0.16459785401821136,
+          -0.14900018274784088,
+          -3.178320404493331e-17
+        ],
+        [
+          0.16459785401821136,
+          -0.11699999868869781,
+          0.0792279988527298
+        ]
+      ],
+      "source": "procedural_V04_presentation_belt",
+      "sha256": "253b37204f23a6189ed880b3cbc88d1d17dbd0f857e5b7e9284a154af15027c5"
+    },
+    {
+      "name": "v04_belt_left",
+      "file": "meshes/v04_belt_left.stl",
+      "label": "Static visual belt",
+      "rgba": [
+        0.2196078431372549,
+        0.2549019607843137,
+        0.2823529411764706,
+        1
+      ],
+      "triangles": 6000,
+      "bounds_m": [
+        [
+          -0.16459785401821136,
+          0.11699981987476349,
+          -3.1407511845601526e-17
+        ],
+        [
+          0.16459785401821136,
+          0.14900000393390656,
+          0.0792279988527298
+        ]
+      ],
+      "source": "procedural_V04_presentation_belt",
+      "sha256": "2a4baa8738fe2fcd5a18af8b24baeea8269c60c6bd26a320038937977dc594c0"
+    }
+  ]
+}

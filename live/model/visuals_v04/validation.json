@@ -1,0 +1,166 @@
+{
+  "mujoco": "3.13.0",
+  "checks": {
+    "moss_robot": {
+      "dimensions": [
+        8,
+        8,
+        8
+      ],
+      "physics_arrays_unchanged": true,
+      "contact_geoms_unchanged": true,
+      "camera_arrays_unchanged": true,
+      "home_settle_max_abs_qpos_delta": 0.0
+    },
+    "moss_visual": {
+      "dimensions": [
+        15,
+        14,
+        8
+      ],
+      "physics_arrays_unchanged": true,
+      "contact_geoms_unchanged": true,
+      "camera_arrays_unchanged": true,
+      "home_settle_max_abs_qpos_delta": 0.0
+    },
+    "synthetic_host_custom_inertia_camera_planar_joints": {
+      "dimensions": [
+        10,
+        10,
+        8
+      ],
+      "physics_arrays_unchanged": true,
+      "contact_geoms_unchanged": true,
+      "camera_arrays_unchanged": true,
+      "home_settle_max_abs_qpos_delta": 0.0
+    }
+  },
+  "replays": {
+    "can": {
+      "scenario": "can",
+      "passed": true,
+      "api_calls": 0,
+      "decisions": 8,
+      "error": null,
+      "final": {
+        "object_m": [
+          -0.1098,
+          0.0322,
+          0.1703
+        ],
+        "tcp_m": [
+          -0.0885,
+          -0.0001,
+          0.3536
+        ],
+        "finger_contacts": 0,
+        "held": false,
+        "in_bin": true,
+        "settled_in_bin": true,
+        "gap_mm": 82.0,
+        "last_action": "release",
+        "last_result": "Object settled in bin",
+        "attempts": 1,
+        "missed_grasps": 0,
+        "needs_regrasp": false,
+        "grasp_attempts_left": 3,
+        "sim_seconds": 20.31,
+        "moving": false,
+        "scenario": "can",
+        "object_speed_m_s": 0.0001,
+        "base_x_m": 0.0,
+        "bin_target_m": [
+          -0.087,
+          0.0,
+          0.36
+        ],
+        "reposition_notice": false,
+        "within_work_area": true
+      }
+    },
+    "miss": {
+      "scenario": "miss",
+      "passed": true,
+      "api_calls": 0,
+      "decisions": 10,
+      "error": null,
+      "final": {
+        "object_m": [
+          -0.0833,
+          -0.0278,
+          0.1697
+        ],
+        "tcp_m": [
+          -0.0885,
+          -0.0001,
+          0.3536
+        ],
+        "finger_contacts": 0,
+        "held": false,
+        "in_bin": true,
+        "settled_in_bin": true,
+        "gap_mm": 82.0,
+        "last_action": "release",
+        "last_result": "Object settled in bin",
+        "attempts": 1,
+        "missed_grasps": 0,
+        "needs_regrasp": false,
+        "grasp_attempts_left": 3,
+        "sim_seconds": 23.61,
+        "moving": false,
+        "scenario": "miss",
+        "object_speed_m_s": 0.0,
+        "base_x_m": 0.0,
+        "bin_target_m": [
+          -0.087,
+          0.0,
+          0.36
+        ],
+        "reposition_notice": false,
+        "within_work_area": true
+      }
+    },
+    "far": {
+      "scenario": "far",
+      "passed": true,
+      "api_calls": 0,
+      "decisions": 9,
+      "error": null,
+      "final": {
+        "object_m": [
+          0.2425,
+          -0.0228,
+          0.1697
+        ],
+        "tcp_m": [
+          0.2365,
+          -0.0001,
+          0.3536
+        ],
+        "finger_contacts": 0,
+        "held": false,
+        "in_bin": true,
+        "settled_in_bin": true,
+        "gap_mm": 82.0,
+        "last_action": "release",
+        "last_result": "Object settled in bin",
+        "attempts": 1,
+        "missed_grasps": 0,
+        "needs_regrasp": false,
+        "grasp_attempts_left": 3,
+        "sim_seconds": 26.77,
+        "moving": false,
+        "scenario": "far",
+        "object_speed_m_s": 0.0,
+        "base_x_m": 0.325,
+        "bin_target_m": [
+          0.238,
+          0.0,
+          0.36
+        ],
+        "reposition_notice": false,
+        "within_work_area": true
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+MOSS V0.4 visual overlay
+Copyright 2026 Laurent Genoud / Show Robotics.
+Project: https://github.com/metrox-eth/moss
+
+MOSS original hull, cover, bin, track, bracket geometry and documentation:
+Creative Commons Attribution 4.0 International (CC BY 4.0).
+https://creativecommons.org/licenses/by/4.0/
+
+Simple component envelopes and illustrative camera/belt geometry in this
+package are original simulation representations. They are not manufacturer
+CAD files, manufacturing drawings or calibrated optical models.
+Meshes have been converted, recolored and simplified for simulation display.
+
+apply_visuals.py: Apache License 2.0 (see LICENSE).
+
+The comparison image also shows the unchanged SO-101 and NormaCore gripper
+from the existing MOSS MuJoCo model. These assets are not redistributed in
+this overlay. Their original attribution remains in the host package:
+SO-101: TheRobotStudio/SO-ARM100, Apache-2.0.
+Gripper: norma-core/norma-core, Apache-2.0.
